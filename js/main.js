@@ -1728,42 +1728,65 @@ document.addEventListener('DOMContentLoaded', () => {
      16B. HERO STORY SLIDESHOW & DIRECTORY TABS
      ================================================================= */
   function initHeroSlideshow() {
-    const slidesContainer = qs('#hero-slides');
-    if (!slidesContainer) return;
+    const bgSlides = qsa('#hero-bg-slider .hero-bg-slide');
+    if (!bgSlides.length) return;
 
-    const slides = qsa('.hero-slide-item', slidesContainer);
-    const dots = qsa('#hero-dots .hero-dot-btn');
+    const dots = qsa('#hero-bg-dots .scene-dot, #hero-bg-dots .story-dot');
     const prevBtn = qs('#hero-prev-btn');
     const nextBtn = qs('#hero-next-btn');
+    const locEl = qs('#hero-story-location');
+    const capEl = qs('#hero-story-caption');
 
-    if (!slides.length) return;
+    const storyData = [
+      {
+        location: 'Joyful Learning Spaces • Keonjhar, Odisha',
+        caption: 'Transforming public schools into joyful hubs of learning where children discover their potential.'
+      },
+      {
+        location: 'Foundational Learning (FLN) • Classroom Transformation',
+        caption: 'Empowering teachers with activity-based toolkits so every child builds solid reading & numeracy foundations.'
+      },
+      {
+        location: 'Universal Access • 80,000+ Children Mainstreamed',
+        caption: 'Ensuring children from tribal and mining habitations enroll, stay in school, and complete secondary education.'
+      },
+      {
+        location: 'Empowering Child Agency • Democratic Public Education',
+        caption: 'Cultivating leadership, curiosity, and confidence so children become changemakers in their communities.'
+      }
+    ];
 
     let currentIndex = 0;
     let timer = null;
 
     function goToSlide(index) {
       if (index < 0) {
-        currentIndex = slides.length - 1;
-      } else if (index >= slides.length) {
+        currentIndex = bgSlides.length - 1;
+      } else if (index >= bgSlides.length) {
         currentIndex = 0;
       } else {
         currentIndex = index;
       }
 
-      slides.forEach((slide, i) => {
+      bgSlides.forEach((slide, i) => {
         slide.classList.toggle('is-active', i === currentIndex);
       });
 
       dots.forEach((dot, i) => {
         dot.classList.toggle('is-active', i === currentIndex);
       });
+
+      if (locEl && capEl && storyData[currentIndex]) {
+        locEl.textContent = storyData[currentIndex].location;
+        capEl.textContent = storyData[currentIndex].caption;
+      }
     }
 
     function startTimer() {
       stopTimer();
       timer = setInterval(() => {
         goToSlide(currentIndex + 1);
-      }, 4800);
+      }, 5500);
     }
 
     function stopTimer() {
@@ -1795,9 +1818,11 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
 
-    // Pause on hover
-    slidesContainer.addEventListener('mouseenter', stopTimer);
-    slidesContainer.addEventListener('mouseleave', startTimer);
+    const heroSection = qs('.hero-immersive-fullscreen');
+    if (heroSection) {
+      heroSection.addEventListener('mouseenter', stopTimer);
+      heroSection.addEventListener('mouseleave', startTimer);
+    }
 
     startTimer();
   }

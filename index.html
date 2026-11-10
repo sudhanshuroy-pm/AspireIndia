@@ -17,7 +17,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400;1,6..72,600&family=Outfit:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="css/styles.css?v=3.5">
+  <link rel="stylesheet" href="css/styles.css?v=5.0">
 </head>
 <body>
   <a href="#main-content" class="skip-to-content">Skip to main content</a>
@@ -200,33 +200,60 @@
   <!-- Main Content -->
   <main id="main-content">
     <!-- ====================================================================
-         SECTION 1: HERO (RESTORED BELOVED HOOK LINE + INSERTED MOVEMENT BADGE)
+         SECTION 1: FULL-SCREEN IMMERSIVE GLASSMORPHIC HERO (UNOBSTRUCTED FACES)
          ==================================================================== -->
-    <section class="hero-immersive" aria-label="Introduction to ASPIRE India">
-      <div class="container hero-split-grid">
-        <!-- Left Column: The Classic Authentic Hook Line & Systemic Promise -->
-        <div class="hero-content-wrap reveal">
+    <section class="hero-immersive-fullscreen" aria-label="Introduction to ASPIRE India">
+      <!-- Full-screen dynamic background slideshow layer highlighting joyful children -->
+      <div class="hero-bg-slider" id="hero-bg-slider">
+        <div class="hero-bg-slide is-active" style="background-image: url('images/hero-cover-1.jpg'); background-position: right 6% center;" data-index="0" role="img" aria-label="Smiling rural school boys in joyful classroom"></div>
+        <div class="hero-bg-slide" style="background-image: url('images/pillar-learning.jpg'); background-position: right 18% center;" data-index="1" role="img" aria-label="Teacher guiding active primary classroom"></div>
+        <div class="hero-bg-slide" style="background-image: url('images/pillar-access.jpg'); background-position: right 20% center;" data-index="2" role="img" aria-label="Happy children walking in school corridor"></div>
+        <div class="hero-bg-slide" style="background-image: url('images/belief-4.jpg'); background-position: right 25% center;" data-index="3" role="img" aria-label="Young girl smiling joyfully while reading book"></div>
+      </div>
+
+      <!-- Cinematic Multi-Layered Scrim & Atmospheric Vignette -->
+      <div class="hero-scrim-overlay" aria-hidden="true"></div>
+
+      <!-- Standard Left & Right Carousel Slide Arrows -->
+      <button class="hero-carousel-arrow hero-carousel-prev" id="hero-prev-btn" aria-label="Previous slide">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <polyline points="15 18 9 12 15 6"></polyline>
+        </svg>
+      </button>
+      <button class="hero-carousel-arrow hero-carousel-next" id="hero-next-btn" aria-label="Next slide">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <polyline points="9 18 15 12 9 6"></polyline>
+        </svg>
+      </button>
+
+      <!-- Hero Main Content Grid -->
+      <div class="container hero-container-layout">
+        <!-- Left Column: Inspiring Proposition, Modern Typography, Dual CTAs -->
+        <div class="hero-content-column reveal">
           <div class="hero-pill-badge">
             <span class="pulse-dot"></span>
-            <span>A Movement for Their Future, Their Lives &bull; Transforming Public Education</span>
+            <span class="pill-text">A Movement for Their Future, Their Lives &bull; Transforming Public Education</span>
           </div>
 
           <h1 class="hero-title-main">
             Every child has a future.<br>
-            <span class="highlight">Every child deserves a chance.</span>
+            <span class="hero-title-highlight">Every child deserves a chance.</span>
           </h1>
 
           <p class="hero-lead-narrative">
             We work with communities to make quality education possible for every child — strengthening schools, empowering teachers, and opening doors to opportunity.
           </p>
 
-          <p style="font-size: 0.95rem; color: rgba(255,255,255,0.85); line-height: 1.6; margin-top: -1rem; margin-bottom: var(--space-8); max-width: 600px;">
-            <strong>Our Core Difference:</strong> Instead of simply teaching 100 children in isolation, ASPIRE transforms the public education ecosystem so hundreds of thousands can learn with dignity.
-          </p>
+          <div class="hero-difference-chip">
+            <span class="chip-sparkle" aria-hidden="true">✨</span>
+            <p class="chip-text">
+              <strong>Our Core Difference:</strong> Instead of simply teaching 100 children in isolation, ASPIRE transforms the public education ecosystem so hundreds of thousands can learn with dignity.
+            </p>
+          </div>
 
-          <div class="hero-actions">
+          <div class="hero-actions-row">
             <div class="donate-cta-wrap">
-              <a href="pages/donate.html" class="btn btn-primary btn-lg donate-cta" data-track="hero:donate_click">
+              <a href="pages/donate.html" class="btn btn-primary btn-lg hero-btn-donate donate-cta" data-track="hero:donate_click">
                 Empower a Child Today
                 <span class="donate-hover-badge" aria-hidden="true">
                   <img src="images/hero-banner-2.png" alt="Smiling child" class="child-avatar">
@@ -235,90 +262,58 @@
               </a>
             </div>
 
-            <a href="#why-aspire" class="btn btn-outline-white btn-lg" data-track="hero:explore_click">
+            <a href="#why-aspire" class="btn btn-glass-hero btn-lg" data-track="hero:explore_click">
               Explore Our Core Approach &darr;
             </a>
           </div>
+        </div>
 
-          <!-- Grassroots Metrics Strip -->
-          <div class="hero-stat-ribbon">
-            <div class="hero-ribbon-item">
-              <div class="ribbon-num" data-target="1200000">12,00,000+</div>
-              <div class="ribbon-label">Children in Strengthened Schools</div>
-            </div>
-            <div class="hero-ribbon-item">
-              <div class="ribbon-num" data-target="80000">80,000+</div>
-              <div class="ribbon-label">Out-of-School Children Mainstreamed</div>
-            </div>
-            <div class="hero-ribbon-item">
-              <div class="ribbon-num" data-target="6400">6,400+</div>
-              <div class="ribbon-label">Government Schools Transformed</div>
-            </div>
-            <div class="hero-ribbon-item">
-              <div class="ribbon-num">99%</div>
-              <div class="ribbon-label">Secondary Transition Retention</div>
-            </div>
+        <!-- Right Stage: Completely open and clear for children's smiling faces (no obstructive stamp) -->
+        <div class="hero-stage-open" aria-hidden="true"></div>
+      </div>
+
+      <!-- Bottom Zone: Slide Caption One-Liner Strip + Floating Glassmorphic Impact Numbers Dock -->
+      <div class="container hero-bottom-zone reveal">
+        <!-- Slide Narrative One-Liner with Dots Navigation -->
+        <div class="hero-caption-strip">
+          <div class="caption-text-group">
+            <span class="caption-live-dot" aria-hidden="true"></span>
+            <span class="caption-location" id="hero-story-location">Joyful Learning Spaces &bull; Keonjhar, Odisha</span>
+            <span class="caption-divider" aria-hidden="true">&bull;</span>
+            <span class="caption-narrative" id="hero-story-caption">Transforming public schools into joyful hubs of learning where children discover their potential.</span>
+          </div>
+          <div class="caption-dots-group" id="hero-bg-dots" role="tablist" aria-label="Slideshow scene selector">
+            <button class="scene-dot is-active" data-slide="0" aria-label="Scene 1: Joyful Classrooms"></button>
+            <button class="scene-dot" data-slide="1" aria-label="Scene 2: Foundational Learning"></button>
+            <button class="scene-dot" data-slide="2" aria-label="Scene 3: Universal Access"></button>
+            <button class="scene-dot" data-slide="3" aria-label="Scene 4: Child Agency"></button>
           </div>
         </div>
 
-        <!-- Right Column: Interactive Story Slideshow (Glassmorphic) -->
-        <div class="hero-slideshow-wrap reveal">
-          <div class="hero-slideshow-card">
-            <div class="hero-slide-viewport" id="hero-slides">
-              <!-- Slide 1 -->
-              <div class="hero-slide-item is-active" data-index="0">
-                <img src="images/hero-banner-1.png" alt="Rural children attending joyful learning session in Odisha">
-                <div class="hero-slide-caption">
-                  <span class="slide-tag">Odisha &bull; Universal Access</span>
-                  <p class="slide-text">Eradicating child labour in mining belts through community-led village vigilance.</p>
-                </div>
-              </div>
-
-              <!-- Slide 2 -->
-              <div class="hero-slide-item" data-index="1">
-                <img src="images/hero-banner-2.png" alt="Classroom learning with child-centric foundational kits">
-                <div class="hero-slide-caption">
-                  <span class="slide-tag">Foundational Learning (FLN)</span>
-                  <p class="slide-text">Activity-based math and bilingual readers ensuring no child falls behind in primary school.</p>
-                </div>
-              </div>
-
-              <!-- Slide 3 -->
-              <div class="hero-slide-item" data-index="2">
-                <img src="images/hero-banner-3.png" alt="Girls studying in Saranda Residential Bridge Course">
-                <div class="hero-slide-caption">
-                  <span class="slide-tag">Jharkhand &bull; Saranda Forest</span>
-                  <p class="slide-text">Residential bridge courses empowering 1st-generation tribal girls into Class 10.</p>
-                </div>
-              </div>
-
-              <!-- Slide 4 -->
-              <div class="hero-slide-item" data-index="3">
-                <img src="images/hero-banner-4.png" alt="Government school teachers participating in pedagogy workshop">
-                <div class="hero-slide-caption">
-                  <span class="slide-tag">Strengthening Public Schools</span>
-                  <p class="slide-text">Collaborating with state education departments to coach teachers across 6,400+ schools.</p>
-                </div>
-              </div>
-            </div>
-
-            <!-- Slide Controls -->
-            <div class="hero-slide-controls">
-              <div class="hero-slide-dots" id="hero-dots">
-                <button class="hero-dot-btn is-active" data-slide="0" aria-label="Slide 1"></button>
-                <button class="hero-dot-btn" data-slide="1" aria-label="Slide 2"></button>
-                <button class="hero-dot-btn" data-slide="2" aria-label="Slide 3"></button>
-                <button class="hero-dot-btn" data-slide="3" aria-label="Slide 4"></button>
-              </div>
-
-              <div class="hero-slide-nav-btns">
-                <button class="hero-nav-arrow" id="hero-prev-btn" aria-label="Previous slide">&larr;</button>
-                <button class="hero-nav-arrow" id="hero-next-btn" aria-label="Next slide">&rarr;</button>
-              </div>
-            </div>
+        <!-- Floating Glassmorphic Impact Dock (Bottom Numbers Strip) -->
+        <div class="hero-glass-dock">
+          <div class="hero-dock-item">
+            <div class="dock-number" data-count-target="1500000" data-count-suffix="+">15,00,000+</div>
+            <div class="dock-label">Children in Strengthened Schools</div>
+          </div>
+          <div class="hero-dock-divider" aria-hidden="true"></div>
+          <div class="hero-dock-item">
+            <div class="dock-number" data-count-target="80000" data-count-suffix="+">80,000+</div>
+            <div class="dock-label">Out-of-School Children Mainstreamed</div>
+          </div>
+          <div class="hero-dock-divider" aria-hidden="true"></div>
+          <div class="hero-dock-item">
+            <div class="dock-number" data-count-target="6459" data-count-suffix="">6,459</div>
+            <div class="dock-label">Government Schools Transformed</div>
+          </div>
+          <div class="hero-dock-divider" aria-hidden="true"></div>
+          <div class="hero-dock-item">
+            <div class="dock-number">99%</div>
+            <div class="dock-label">Secondary Transition Retention</div>
           </div>
         </div>
       </div>
+    </section>
     </section>
 
     <!-- ====================================================================
@@ -815,14 +810,9 @@
         <button class="search-close-btn" id="search-close-btn" aria-label="Close search">&times;</button>
       </div>
       <div class="search-results-container" id="search-results-list">
-        <!-- Results dynamically populated by js/main.js -->
-      </div>
-    </div>
-  </div>
-
-  <button class="back-to-top" aria-label="Back to top">&uarr;</button>
+        <!-- Results dynamically populated by js/main.js?v=5.0"back-to-top" aria-label="Back to top">&uarr;</button>
 
   <!-- Interactive JavaScript Controller -->
-  <script src="js/main.js?v=3.5" defer></script>
+  <script src="js/main.js?v=5.0" defer></script>
 </body>
 </html>
