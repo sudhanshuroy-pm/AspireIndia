@@ -1,0 +1,828 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Every child has a future. Every child deserves a chance. ASPIRE India works with communities to transform the public education ecosystem.">
+  <title>ASPIRE India — Every Child Has A Future. Every Child Deserves A Chance.</title>
+  
+  <link rel="canonical" href="https://aspire-india.org/">
+  <meta property="og:title" content="ASPIRE India — Transforming Public Education Ecosystem">
+  <meta property="og:description" content="Instead of simply teaching 100 children in isolation, ASPIRE improves the conditions in which thousands learn by strengthening public schools.">
+  <meta property="og:image" content="images/hero-banner-1.png">
+  <meta property="og:type" content="website">
+
+  <!-- Typography: Outfit (Geometric Display & Headings) + Newsreader (Editorial Serifs) + Plus Jakarta Sans (Comfort Body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400;1,6..72,600&family=Outfit:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/styles.css?v=3.5">
+</head>
+<body>
+  <a href="#main-content" class="skip-to-content">Skip to main content</a>
+
+  <!-- Header -->
+  <header class="site-header" role="banner">
+    <div class="container header-inner">
+      <a href="index.html" class="site-logo" aria-label="ASPIRE India Homepage">
+        <img src="images/logo.png" alt="ASPIRE India Logo" height="46">
+      </a>
+
+      <!-- Desktop Navigation matching Official Website Structure -->
+      <nav class="desktop-nav" aria-label="Main Navigation">
+        <ul class="nav-list">
+          <li class="nav-item">
+            <a href="index.html" class="nav-link is-active">Home</a>
+          </li>
+
+          <!-- About Dropdown matching Official Menu: Who We Are, Board & Advisors, Our Team, Accountability, Partnerships, Careers, Contact Us -->
+          <li class="nav-item">
+            <button class="nav-link nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true">
+              About
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+                <path d="M2.5 4.5L6 8L9.5 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+            <div class="nav-dropdown-menu" aria-hidden="true">
+              <a href="pages/about.html" class="dropdown-link">
+                Who We Are
+                <span class="dropdown-desc">Identity, mission, vision &amp; beliefs</span>
+              </a>
+              <a href="pages/board-advisors.html" class="dropdown-link">
+                Board and Advisors
+                <span class="dropdown-desc">Governance &amp; advisory council</span>
+              </a>
+              <a href="pages/team.html" class="dropdown-link">
+                Our Team
+                <span class="dropdown-desc">Leadership &amp; field professionals</span>
+              </a>
+              <a href="pages/trust-accountability.html" class="dropdown-link">
+                Accountability
+                <span class="dropdown-desc">Reports, audits &amp; disclosures</span>
+              </a>
+              <a href="pages/partnerships.html" class="dropdown-link">
+                Partnerships
+                <span class="dropdown-desc">CSR &amp; institutional collaboration</span>
+              </a>
+              <a href="pages/careers.html" class="dropdown-link">
+                Careers
+                <span class="dropdown-desc">Join our grassroots movement</span>
+              </a>
+              <a href="pages/contact.html" class="dropdown-link">
+                Contact Us
+                <span class="dropdown-desc">Reach our national &amp; state offices</span>
+              </a>
+            </div>
+          </li>
+
+          <!-- What We Do Dropdown -->
+          <li class="nav-item">
+            <button class="nav-link nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true">
+              What We Do
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+                <path d="M2.5 4.5L6 8L9.5 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+            <div class="nav-dropdown-menu" aria-hidden="true">
+              <a href="pages/execution-model.html" class="dropdown-link">
+                Execution Model
+                <span class="dropdown-desc">Ecosystem-wide change methodology</span>
+              </a>
+              <a href="pages/programmes.html" class="dropdown-link">
+                Core Programmes
+                <span class="dropdown-desc">Flagship educational initiatives</span>
+              </a>
+            </div>
+          </li>
+
+          <li class="nav-item">
+            <a href="pages/partnerships.html" class="nav-link">Partnerships</a>
+          </li>
+
+          <li class="nav-item">
+            <a href="pages/resources.html" class="nav-link">Resources</a>
+          </li>
+        </ul>
+
+        <!-- Global Search Trigger + Donate CTA with Child Smiling Hover Micro-Interaction -->
+        <div style="display: flex; align-items: center; gap: 12px;">
+          <button class="search-btn-trigger" aria-label="Open global search dialog" id="global-search-trigger">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+            <span>Search</span>
+            <span class="search-kbd">⌘K</span>
+          </button>
+
+          <div class="donate-cta-wrap">
+            <a href="pages/donate.html" class="btn btn-primary btn-sm donate-cta" data-track="header:donate_click">
+              Donate Now
+              <span class="donate-hover-badge" aria-hidden="true">
+                <img src="images/hero-banner-1.png" alt="A smiling student" class="child-avatar">
+                <span>You give a child their classroom back</span>
+              </span>
+            </a>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Mobile Hamburger Button -->
+      <button class="hamburger-btn" aria-label="Toggle mobile menu" aria-expanded="false">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Overlay -->
+  <div class="drawer-overlay" aria-hidden="true"></div>
+
+  <!-- Mobile Navigation Drawer -->
+  <div class="mobile-drawer" aria-hidden="true" role="dialog" aria-label="Mobile Navigation">
+    <div class="drawer-header">
+      <div class="site-logo">
+        <img src="images/logo.png" alt="ASPIRE Logo" height="40">
+      </div>
+      <button class="drawer-close-btn" aria-label="Close mobile menu">&times;</button>
+    </div>
+
+    <nav class="mobile-nav-list">
+      <a href="index.html" class="mobile-nav-link is-active">Home</a>
+
+      <div class="mobile-nav-item">
+        <button class="mobile-nav-link accordion-toggle" aria-expanded="false">
+          About
+          <svg width="14" height="14" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+            <path d="M2.5 4.5L6 8L9.5 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+        <div class="accordion-menu" aria-hidden="true">
+          <a href="pages/about.html" class="mobile-nav-link">Who We Are</a>
+          <a href="pages/board-advisors.html" class="mobile-nav-link">Board and Advisors</a>
+          <a href="pages/team.html" class="mobile-nav-link">Our Team</a>
+          <a href="pages/trust-accountability.html" class="mobile-nav-link">Accountability</a>
+          <a href="pages/partnerships.html" class="mobile-nav-link">Partnerships</a>
+          <a href="pages/careers.html" class="mobile-nav-link">Careers</a>
+          <a href="pages/contact.html" class="mobile-nav-link">Contact Us</a>
+        </div>
+      </div>
+
+      <div class="mobile-nav-item">
+        <button class="mobile-nav-link accordion-toggle" aria-expanded="false">
+          What We Do
+          <svg width="14" height="14" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+            <path d="M2.5 4.5L6 8L9.5 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+        <div class="accordion-menu" aria-hidden="true">
+          <a href="pages/execution-model.html" class="mobile-nav-link">Execution Model</a>
+          <a href="pages/programmes.html" class="mobile-nav-link">Core Programmes</a>
+        </div>
+      </div>
+
+      <a href="pages/partnerships.html" class="mobile-nav-link">Partnerships</a>
+      <a href="pages/resources.html" class="mobile-nav-link">Resources</a>
+    </nav>
+
+    <div class="mobile-drawer-footer">
+      <a href="pages/donate.html" class="btn btn-primary btn-block donate-cta" style="width: 100%;">
+        Donate Now
+      </a>
+      <p style="font-size: 0.775rem; color: var(--text-muted); text-align: center; margin-top: 1rem;">
+        80G Tax Exemption Eligible &bull; Registered Society
+      </p>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <main id="main-content">
+    <!-- ====================================================================
+         SECTION 1: HERO (RESTORED BELOVED HOOK LINE + INSERTED MOVEMENT BADGE)
+         ==================================================================== -->
+    <section class="hero-immersive" aria-label="Introduction to ASPIRE India">
+      <div class="container hero-split-grid">
+        <!-- Left Column: The Classic Authentic Hook Line & Systemic Promise -->
+        <div class="hero-content-wrap reveal">
+          <div class="hero-pill-badge">
+            <span class="pulse-dot"></span>
+            <span>A Movement for Their Future, Their Lives &bull; Transforming Public Education</span>
+          </div>
+
+          <h1 class="hero-title-main">
+            Every child has a future.<br>
+            <span class="highlight">Every child deserves a chance.</span>
+          </h1>
+
+          <p class="hero-lead-narrative">
+            We work with communities to make quality education possible for every child — strengthening schools, empowering teachers, and opening doors to opportunity.
+          </p>
+
+          <p style="font-size: 0.95rem; color: rgba(255,255,255,0.85); line-height: 1.6; margin-top: -1rem; margin-bottom: var(--space-8); max-width: 600px;">
+            <strong>Our Core Difference:</strong> Instead of simply teaching 100 children in isolation, ASPIRE transforms the public education ecosystem so hundreds of thousands can learn with dignity.
+          </p>
+
+          <div class="hero-actions">
+            <div class="donate-cta-wrap">
+              <a href="pages/donate.html" class="btn btn-primary btn-lg donate-cta" data-track="hero:donate_click">
+                Empower a Child Today
+                <span class="donate-hover-badge" aria-hidden="true">
+                  <img src="images/hero-banner-2.png" alt="Smiling child" class="child-avatar">
+                  <span>Your gift puts a child back in school</span>
+                </span>
+              </a>
+            </div>
+
+            <a href="#why-aspire" class="btn btn-outline-white btn-lg" data-track="hero:explore_click">
+              Explore Our Core Approach &darr;
+            </a>
+          </div>
+
+          <!-- Grassroots Metrics Strip -->
+          <div class="hero-stat-ribbon">
+            <div class="hero-ribbon-item">
+              <div class="ribbon-num" data-target="1200000">12,00,000+</div>
+              <div class="ribbon-label">Children in Strengthened Schools</div>
+            </div>
+            <div class="hero-ribbon-item">
+              <div class="ribbon-num" data-target="80000">80,000+</div>
+              <div class="ribbon-label">Out-of-School Children Mainstreamed</div>
+            </div>
+            <div class="hero-ribbon-item">
+              <div class="ribbon-num" data-target="6400">6,400+</div>
+              <div class="ribbon-label">Government Schools Transformed</div>
+            </div>
+            <div class="hero-ribbon-item">
+              <div class="ribbon-num">99%</div>
+              <div class="ribbon-label">Secondary Transition Retention</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column: Interactive Story Slideshow (Glassmorphic) -->
+        <div class="hero-slideshow-wrap reveal">
+          <div class="hero-slideshow-card">
+            <div class="hero-slide-viewport" id="hero-slides">
+              <!-- Slide 1 -->
+              <div class="hero-slide-item is-active" data-index="0">
+                <img src="images/hero-banner-1.png" alt="Rural children attending joyful learning session in Odisha">
+                <div class="hero-slide-caption">
+                  <span class="slide-tag">Odisha &bull; Universal Access</span>
+                  <p class="slide-text">Eradicating child labour in mining belts through community-led village vigilance.</p>
+                </div>
+              </div>
+
+              <!-- Slide 2 -->
+              <div class="hero-slide-item" data-index="1">
+                <img src="images/hero-banner-2.png" alt="Classroom learning with child-centric foundational kits">
+                <div class="hero-slide-caption">
+                  <span class="slide-tag">Foundational Learning (FLN)</span>
+                  <p class="slide-text">Activity-based math and bilingual readers ensuring no child falls behind in primary school.</p>
+                </div>
+              </div>
+
+              <!-- Slide 3 -->
+              <div class="hero-slide-item" data-index="2">
+                <img src="images/hero-banner-3.png" alt="Girls studying in Saranda Residential Bridge Course">
+                <div class="hero-slide-caption">
+                  <span class="slide-tag">Jharkhand &bull; Saranda Forest</span>
+                  <p class="slide-text">Residential bridge courses empowering 1st-generation tribal girls into Class 10.</p>
+                </div>
+              </div>
+
+              <!-- Slide 4 -->
+              <div class="hero-slide-item" data-index="3">
+                <img src="images/hero-banner-4.png" alt="Government school teachers participating in pedagogy workshop">
+                <div class="hero-slide-caption">
+                  <span class="slide-tag">Strengthening Public Schools</span>
+                  <p class="slide-text">Collaborating with state education departments to coach teachers across 6,400+ schools.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Slide Controls -->
+            <div class="hero-slide-controls">
+              <div class="hero-slide-dots" id="hero-dots">
+                <button class="hero-dot-btn is-active" data-slide="0" aria-label="Slide 1"></button>
+                <button class="hero-dot-btn" data-slide="1" aria-label="Slide 2"></button>
+                <button class="hero-dot-btn" data-slide="2" aria-label="Slide 3"></button>
+                <button class="hero-dot-btn" data-slide="3" aria-label="Slide 4"></button>
+              </div>
+
+              <div class="hero-slide-nav-btns">
+                <button class="hero-nav-arrow" id="hero-prev-btn" aria-label="Previous slide">&larr;</button>
+                <button class="hero-nav-arrow" id="hero-next-btn" aria-label="Next slide">&rarr;</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 2: CORE USP — WHY ASPIRE IS DIFFERENT
+         ==================================================================== -->
+    <section id="why-aspire" class="usp-section" aria-labelledby="usp-heading">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-tag">Our Systemic Approach</span>
+          <h2 id="usp-heading" class="section-title">
+            Why ASPIRE Is Different: Transforming The Entire Ecosystem
+          </h2>
+          <p class="section-subtitle">
+            Most charity models teach 100 children in parallel. ASPIRE transforms the condition in which thousands learn by strengthening the public school system itself.
+          </p>
+        </div>
+
+        <div class="usp-comparison-grid reveal">
+          <!-- The Isolated Approach -->
+          <div class="usp-card-isolated">
+            <span class="usp-tag">The Conventional Isolated Approach</span>
+            <h3>Teaching 100 Children in Isolation</h3>
+            <p>
+              Setting up parallel private centers or tutoring 100 children in isolated pockets. Once external project funding ends, the local government school remains under-resourced, and the systemic cycle of child labour, teacher vacancies, and dropout rates continues for the next generation.
+            </p>
+          </div>
+
+          <!-- The ASPIRE Systemic Model -->
+          <div class="usp-card-systemic">
+            <span class="usp-tag">The ASPIRE Systemic Model</span>
+            <h3>Improving The Conditions Where Thousands Learn</h3>
+            <p>
+              We transform the public schooling ecosystem from within. We work directly with government schools, coach public school teachers, activate parent-led School Management Committees (SMCs), and mobilize Panchayats to declare Child Labour Free Zones — embedding permanent capability so every child in the community thrives.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 3: MISSION, VISION & OFFICIAL CORE BELIEFS (GLASSMORPHIC)
+         ==================================================================== -->
+    <section class="beliefs-section" aria-labelledby="beliefs-title">
+      <div class="container">
+        <!-- Mission & Vision Duo -->
+        <div class="mv-glass-grid reveal-stagger">
+          <div class="mv-glass-card">
+            <div class="mv-glass-icon">🎯</div>
+            <h3>Our Mission</h3>
+            <p>
+              To work with communities in the remotest areas of India to ensure quality school education for all children, helping them realise their full potential by making learning inclusive, socially relevant, and aligned with 21st-century challenges.
+            </p>
+          </div>
+
+          <div class="mv-glass-card">
+            <div class="mv-glass-icon">🔭</div>
+            <h3>Our Vision</h3>
+            <p>
+              To act as a people’s movement ensuring that every child has the best possible learning opportunities and completes secondary schooling through a revitalised government school system.
+            </p>
+          </div>
+        </div>
+
+        <!-- 4 Core Beliefs (Exact User Copy + High-Fidelity Glassmorphic Image Cards) -->
+        <div class="section-header reveal">
+          <span class="section-tag">Guiding Principles</span>
+          <h2 id="beliefs-title" class="section-title">Our Core Beliefs</h2>
+          <p class="section-subtitle">
+            We believe every child deserves the opportunity to learn, grow and shape their own future.
+          </p>
+        </div>
+
+        <div class="beliefs-image-grid reveal-stagger">
+          <!-- Belief 1 -->
+          <article class="belief-img-card">
+            <div class="belief-img-wrap">
+              <img src="images/belief-1.jpg" alt="Children joyfully attending class" loading="lazy">
+            </div>
+            <div class="belief-card-body">
+              <div class="belief-num-badge">01 &bull; OPPORTUNITY</div>
+              <h3>01. Every child deserves a chance.</h3>
+              <p>A child's future should never be limited by where they are born or the circumstances they grow up in. The right to education belongs to every child.</p>
+            </div>
+          </article>
+
+          <!-- Belief 2 -->
+          <article class="belief-img-card">
+            <div class="belief-img-wrap">
+              <img src="images/belief-2.jpg" alt="An Indian male teacher interacting with his elementary school students" loading="lazy">
+            </div>
+            <div class="belief-card-body">
+              <div class="belief-num-badge">02 &bull; EMPOWERMENT</div>
+              <h3>02. Every teacher can inspire change.</h3>
+              <p>When teachers are supported, empowered and equipped, classrooms become places where children can truly learn. Empowered teachers build stronger learning experiences.</p>
+            </div>
+          </article>
+
+          <!-- Belief 3 -->
+          <article class="belief-img-card">
+            <div class="belief-img-wrap">
+              <img src="images/belief-3.jpg" alt="The Village Education Committee meeting in a rural school" loading="lazy">
+            </div>
+            <div class="belief-card-body">
+              <div class="belief-num-badge">03 &bull; SOLIDARITY</div>
+              <h3>03. Strong communities build stronger schools.</h3>
+              <p>Education does not happen in isolation. When parents, communities and local leaders come together, schools thrive. Transforming education requires the strength of an entire community.</p>
+            </div>
+          </article>
+
+          <!-- Belief 4 -->
+          <article class="belief-img-card">
+            <div class="belief-img-wrap">
+              <img src="images/belief-4.jpg" alt="A group of young Indian girls in school uniforms walking together" loading="lazy">
+            </div>
+            <div class="belief-card-body">
+              <div class="belief-num-badge">04 &bull; TRANSFORMATION</div>
+              <h3>04. Education can transform generations.</h3>
+              <p>When a child learns, an entire family moves forward. Education breaks cycles of disadvantage and opens doors to a brighter future.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 4: THE THREE PILLARS OF CHANGE (CLEARLY DEFINED + USER IMAGES)
+         ==================================================================== -->
+    <section id="pillars" class="three-pillars-section" aria-labelledby="pillars-heading">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-tag">Systemic Framework</span>
+          <h2 id="pillars-heading" class="section-title">
+            The Three Pillars of Change
+          </h2>
+          <p class="section-subtitle" style="max-width: 840px; margin-inline: auto;">
+            Every child deserves the opportunity to learn and build a better future. But making that possible takes more than getting children into school. It takes a learning environment where children can thrive and communities that stand behind them. That is why our work rests on three interconnected pillars.
+          </p>
+        </div>
+
+        <div class="pillars-image-grid reveal-stagger">
+          <!-- Pillar 1: ACCESS -->
+          <article class="pillar-img-card">
+            <div class="pillar-img-wrap">
+              <img src="images/pillar-access.jpg" alt="A smiling young Indian girl carrying her school bag with joy" loading="lazy">
+              <span class="pillar-tag-float">Pillar 01 &bull; Access</span>
+            </div>
+            <div class="pillar-card-body">
+              <h3>01. ACCESS</h3>
+              <div class="pillar-subtitle">Every child belongs in school.</div>
+              <p>
+                We identify children who are out of school, working, or at risk of dropping out, and help them enter or return to the classroom through bridge learning and community support.
+              </p>
+              <div class="pillar-proof-strip">
+                🎯 Over 80,000 out-of-school children mainstreamed
+              </div>
+              <a href="pages/programmes.html" class="pillar-learn-more" style="margin-top: auto;">
+                Explore Access Programmes &rarr;
+              </a>
+            </div>
+          </article>
+
+          <!-- Pillar 2: LEARNING -->
+          <article class="pillar-img-card">
+            <div class="pillar-img-wrap">
+              <img src="images/pillar-learning.jpg" alt="Children engaged in interactive classroom learning" loading="lazy">
+              <span class="pillar-tag-float">Pillar 02 &bull; Learning</span>
+            </div>
+            <div class="pillar-card-body">
+              <h3>02. LEARNING</h3>
+              <div class="pillar-subtitle">Every classroom should inspire learning.</div>
+              <p>
+                Getting children into school is only the first step. We work to make classrooms engaging, supportive, and effective so that every child can build strong foundational skills.
+              </p>
+              <div class="pillar-proof-strip">
+                📚 6,459 public schools pedagogically strengthened
+              </div>
+              <a href="pages/execution-model.html" class="pillar-learn-more" style="margin-top: auto;">
+                See Pedagogy Framework &rarr;
+              </a>
+            </div>
+          </article>
+
+          <!-- Pillar 3: GOVERNANCE -->
+          <article class="pillar-img-card">
+            <div class="pillar-img-wrap">
+              <img src="images/smc-meeting.jpg?v=3.5" alt="Meeting of parents, teachers and local community members in a School Management Committee (SMC)" loading="lazy">
+              <span class="pillar-tag-float">Pillar 03 &bull; Governance</span>
+            </div>
+            <div class="pillar-card-body">
+              <h3>03. GOVERNANCE</h3>
+              <div class="pillar-subtitle">Strong schools need strong communities.</div>
+              <p>
+                Education is a shared responsibility. We bring together parents, teachers, and local communities to actively participate in school development and child welfare.
+              </p>
+              <div class="pillar-proof-strip">
+                🏡 14,895 habitations mobilized
+              </div>
+              <a href="pages/execution-model.html" class="pillar-learn-more" style="margin-top: auto;">
+                Discover Community Governance &rarr;
+              </a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 5: GRASSROOTS REALITY (RINKI'S JOURNEY)
+         ==================================================================== -->
+    <section class="section" style="background-color: #ffffff;" aria-labelledby="story-spotlight">
+      <div class="container story-start-grid">
+        <div class="reveal">
+          <span class="section-tag">Grassroots Reality</span>
+          <h2 id="story-spotlight" class="section-title">
+            From Iron-Ore Pits to Class 10: Rinki's Journey
+          </h2>
+          <blockquote class="story-lead-quote">
+            "Before ASPIRE came to our village, school was a luxury. Today, learning is my birthright."
+          </blockquote>
+          <p style="font-size: 1rem; line-height: 1.7; color: var(--text-secondary); margin-bottom: var(--space-6);">
+            At age 11, Rinki was breaking stones in a Keonjhar mining quarry. Through ASPIRE’s community mobilization, she entered our Non-Residential Bridge Centre, mastered foundational numeracy in 11 months, and was mainstreamed into Class 6 of the local government high school. Today, she is preparing for her board examinations.
+          </p>
+          <div class="btn-group">
+            <a href="pages/programmes.html" class="btn btn-primary">
+              Read Beneficiary Stories &rarr;
+            </a>
+            <a href="pages/donate.html" class="btn btn-outline">
+              Sponsor a Bridge Course &rarr;
+            </a>
+          </div>
+        </div>
+
+        <div class="reveal">
+          <div class="story-frame-card">
+            <img src="images/our-strategy.jpg" alt="ASPIRE strategic execution on ground" loading="lazy">
+            <div class="story-frame-badge">
+              <div style="font-size: 0.8rem; font-weight: 700; color: var(--brand-gold); text-transform: uppercase;">Keonjhar, Odisha</div>
+              <div style="font-size: 0.95rem; font-weight: 600;">99% retention transition rate back into public schools.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 6: OUR GEOGRAPHIC REACH & INTERACTIVE MAP
+         ==================================================================== -->
+    <section class="section" style="background-color: var(--bg-warm);" aria-labelledby="map-heading">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-tag">Geographic Presence</span>
+          <h2 id="map-heading" class="section-title">Where We Work Across India</h2>
+          <p class="section-subtitle">
+            Direct saturation in high-priority tribal, mining, and aspirational belts across five states.
+          </p>
+        </div>
+
+        <!-- 6 Official Reach Stat Cards (Exact Official Metrics) -->
+        <div class="reach-strip-grid reveal-stagger" style="margin-bottom: var(--space-8);">
+          <div class="reach-stat-card">
+            <div class="reach-num">1.5M</div>
+            <div class="reach-desc">Children (Age 3–16) Impacted</div>
+          </div>
+          <div class="reach-stat-card">
+            <div class="reach-num">8</div>
+            <div class="reach-desc">Tribal &amp; Mining Districts</div>
+          </div>
+          <div class="reach-stat-card">
+            <div class="reach-num">14,895</div>
+            <div class="reach-desc">Habitations Mobilized</div>
+          </div>
+          <div class="reach-stat-card">
+            <div class="reach-num">39</div>
+            <div class="reach-desc">Administrative Blocks</div>
+          </div>
+          <div class="reach-stat-card">
+            <div class="reach-num">6,459</div>
+            <div class="reach-desc">Government Schools Transformed</div>
+          </div>
+          <div class="reach-stat-card">
+            <div class="reach-num">8,041</div>
+            <div class="reach-desc">Anganwadi Centres Strengthened</div>
+          </div>
+        </div>
+
+        <!-- State Presence Cards -->
+        <div class="team-grid reveal-stagger" style="margin-bottom: var(--space-8);">
+          <div class="glass-panel" style="padding: var(--space-6);">
+            <div style="font-size: 1.25rem; font-weight: 700; color: var(--brand-primary); margin-bottom: 4px;">Odisha</div>
+            <p style="font-size: 0.875rem; color: var(--text-secondary); margin-bottom: 0;">Keonjhar, Jajpur, Sundargarh &bull; 6,459 schools, full CLFZ saturation, and FLN pedagogy.</p>
+          </div>
+          <div class="glass-panel" style="padding: var(--space-6);">
+            <div style="font-size: 1.25rem; font-weight: 700; color: var(--brand-primary); margin-bottom: 4px;">Jharkhand</div>
+            <p style="font-size: 0.875rem; color: var(--text-secondary); margin-bottom: 0;">West Singhbhum &amp; Saranda Forest &bull; Residential Bridge Courses for tribal girls.</p>
+          </div>
+          <div class="glass-panel" style="padding: var(--space-6);">
+            <div style="font-size: 1.25rem; font-weight: 700; color: var(--brand-primary); margin-bottom: 4px;">West Bengal &amp; Bihar</div>
+            <p style="font-size: 0.875rem; color: var(--text-secondary); margin-bottom: 0;">Purulia, Bankura &amp; Gaya &bull; Foundational learning &amp; community monitoring.</p>
+          </div>
+          <div class="glass-panel" style="padding: var(--space-6);">
+            <div style="font-size: 1.25rem; font-weight: 700; color: var(--brand-primary); margin-bottom: 4px;">Delhi &bull; NCR</div>
+            <p style="font-size: 0.875rem; color: var(--text-secondary); margin-bottom: 0;">National Secretariat, policy advocacy &amp; urban learning initiatives.</p>
+          </div>
+        </div>
+
+        <!-- Official Focus Areas Tag Cloud -->
+        <div style="text-align: center; margin-bottom: var(--space-6);">
+          <span style="font-size: 0.85rem; font-weight: 700; color: var(--brand-navy); text-transform: uppercase; letter-spacing: 0.06em;">Our Integrated Focus Areas:</span>
+          <div class="focus-pills-wrap">
+            <span class="focus-pill-tag">Education</span>
+            <span class="focus-pill-tag">Early Childhood Development</span>
+            <span class="focus-pill-tag">Child Protection</span>
+            <span class="focus-pill-tag">Gender Equity</span>
+            <span class="focus-pill-tag">Public Governance</span>
+            <span class="focus-pill-tag">Co-creating with Community</span>
+            <span class="focus-pill-tag">Health &amp; Nutrition</span>
+            <span class="focus-pill-tag">Environment</span>
+            <span class="focus-pill-tag">Covid-19 Response</span>
+          </div>
+        </div>
+
+        <div style="text-align: center;">
+          <a href="pages/execution-model.html" class="btn btn-outline">
+            Explore Field Execution Model &rarr;
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 7: OUR PARTNERS & DONORS (PROMINENT RECOGNITION)
+         ==================================================================== -->
+    <section class="partners-section section" aria-labelledby="partners-title">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-tag">Institutional Endorsement</span>
+          <h2 id="partners-title" class="section-title">
+            OUR PARTNERS &amp; DONORS
+          </h2>
+          <p class="section-subtitle">
+            Long-term co-investors in public education equity across Odisha, Jharkhand, Bihar, and West Bengal.
+          </p>
+        </div>
+
+        <div class="partners-logo-grid reveal-stagger">
+          <div class="partner-logo-item">
+            <img src="images/partner-tata-steel.png" alt="Tata Steel Foundation" title="Tata Steel Foundation">
+          </div>
+          <div class="partner-logo-item">
+            <img src="images/partner-hdfc.png" alt="HDFC Bank Parivartan" title="HDFC Bank Parivartan">
+          </div>
+          <div class="partner-logo-item">
+            <img src="images/partner-ekstep.png" alt="EkStep Foundation" title="EkStep Foundation">
+          </div>
+          <div class="partner-logo-item">
+            <img src="images/partner-hans.png" alt="The Hans Foundation" title="The Hans Foundation">
+          </div>
+          <div class="partner-logo-item">
+            <img src="images/partner-hero.png" alt="Hero MotoCorp" title="Hero MotoCorp">
+          </div>
+          <div class="partner-logo-item">
+            <img src="images/partner-tech-mahindra.png" alt="Tech Mahindra Foundation" title="Tech Mahindra Foundation">
+          </div>
+          <div class="partner-logo-item">
+            <img src="images/partner-tata-aig.png" alt="Tata AIG" title="Tata AIG">
+          </div>
+          <div class="partner-logo-item">
+            <img src="images/partner-magic-bus.png" alt="Magic Bus India Foundation" title="Magic Bus India Foundation">
+          </div>
+          <div class="partner-logo-item">
+            <img src="images/partner-tata-metaliks.png" alt="Tata Metaliks" title="Tata Metaliks">
+          </div>
+          <div class="partner-logo-item">
+            <img src="images/partner-igl.png" alt="Indraprastha Gas Limited" title="Indraprastha Gas Limited">
+          </div>
+        </div>
+
+        <div style="text-align: center; margin-top: var(--space-8);">
+          <a href="pages/partnerships.html" class="btn btn-outline">
+            View All Institutional Partners &amp; CSR Tracks &rarr;
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         SECTION 8: FINAL INSPIRING CALL TO ACTION
+         ==================================================================== -->
+    <section class="section" style="background: linear-gradient(135deg, #071530 0%, #0a1e45 60%, #0c2555 100%); color: #ffffff;" aria-labelledby="cta-heading">
+      <div class="container" style="text-align: center; max-width: 780px;">
+        <span class="section-tag" style="background: rgba(255,109,18,0.2); color: #ffffff; border: 1px solid var(--brand-primary);">Join The Movement</span>
+        <h2 id="cta-heading" style="color: #ffffff; font-family: var(--font-serif); font-size: clamp(2rem, 3.5vw, 3rem); margin-bottom: var(--space-4);">
+          Every Child Has a Future. Every Child Deserves a Chance.
+        </h2>
+        <p style="font-size: 1.15rem; color: rgba(255,255,255,0.9); line-height: 1.7; margin-bottom: var(--space-8);">
+          Your contribution doesn't just buy a book — it restores a child's dignity, strengthens their local school, and breaks the generational cycle of poverty.
+        </p>
+
+        <div style="display: flex; justify-content: center; gap: var(--space-4); flex-wrap: wrap;">
+          <div class="donate-cta-wrap">
+            <a href="pages/donate.html" class="btn btn-primary btn-lg donate-cta">
+              Donate Now &bull; 80G Tax Benefit
+              <span class="donate-hover-badge" aria-hidden="true">
+                <img src="images/hero-banner-3.png" alt="Smiling student" class="child-avatar">
+                <span>See the instant impact of your gift</span>
+              </span>
+            </a>
+          </div>
+          <a href="pages/about.html" class="btn btn-outline-white btn-lg">
+            Who We Are &rarr;
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="site-logo" style="margin-bottom: var(--space-4);">
+            <img src="images/logo.png" alt="ASPIRE India Logo" height="44" style="background: #fff; padding: 4px 10px; border-radius: var(--radius-sm); display: inline-block;">
+          </div>
+          <p>
+            ASPIRE (A Society for Promotion of Inclusive and Relevant Education) works with communities from the remotest areas of India to ensure quality school education for all children.
+          </p>
+          <div class="footer-credentials" style="display: flex; gap: 8px; flex-wrap: wrap; margin-top: var(--space-4);">
+            <span class="cred-badge">Societies Reg. Act</span>
+            <span class="cred-badge">FCRA Registered</span>
+            <span class="cred-badge">80G Tax Exemption</span>
+            <span class="cred-badge">12A Registered</span>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer-heading" style="color: #fff; margin-bottom: var(--space-4);">About ASPIRE</h4>
+          <ul class="footer-links" style="list-style: none; padding: 0;">
+            <li><a href="pages/about.html">Who We Are</a></li>
+            <li><a href="pages/board-advisors.html">Board and Advisors</a></li>
+            <li><a href="pages/team.html">Our Team</a></li>
+            <li><a href="pages/trust-accountability.html">Accountability</a></li>
+            <li><a href="pages/partnerships.html">Partnerships</a></li>
+            <li><a href="pages/careers.html">Careers</a></li>
+            <li><a href="pages/contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-heading" style="color: #fff; margin-bottom: var(--space-4);">Programmes</h4>
+          <ul class="footer-links" style="list-style: none; padding: 0;">
+            <li><a href="pages/execution-model.html">Execution Model</a></li>
+            <li><a href="pages/programmes.html">Core Programmes</a></li>
+            <li><a href="pages/resources.html">Reports &amp; Audits</a></li>
+            <li><a href="pages/donate.html">Donate Now</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-heading" style="color: #fff; margin-bottom: var(--space-4);">National Office</h4>
+          <p style="font-size: 0.875rem; color: #cbd5e1; margin-bottom: 0.6rem;">
+            📍 1st &amp; 2nd Floors, B117, Sarvodaya Enclave, New Delhi - 110017
+          </p>
+          <p style="font-size: 0.875rem; color: #cbd5e1; margin-bottom: 0.6rem;">
+            📞 +91 011 46516788
+          </p>
+          <p style="font-size: 0.875rem; color: #cbd5e1; margin-bottom: var(--space-4);">
+            ✉️ <a href="mailto:contactus@aspire-india.org" style="color: #fff;">contactus@aspire-india.org</a>
+          </p>
+          <a href="pages/donate.html" class="btn btn-primary btn-sm donate-cta">Support a Child</a>
+        </div>
+      </div>
+
+      <div class="footer-bottom" style="border-top: 1px solid var(--brand-navy-border); padding-top: var(--space-8); display: flex; justify-content: space-between; flex-wrap: wrap; gap: var(--space-4); font-size: 0.85rem; color: #64748b;">
+        <p>&copy; 2024 ASPIRE — A Society for Promotion of Inclusive and Relevant Education. All rights reserved.</p>
+        <div class="footer-legal-links" style="display: flex; gap: var(--space-4);">
+          <a href="pages/trust-accountability.html" style="color: #94a3b8;">Privacy Policy</a>
+          <a href="pages/trust-accountability.html" style="color: #94a3b8;">Terms of Service</a>
+          <a href="pages/trust-accountability.html" style="color: #94a3b8;">80G Certification</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Global Glassmorphic Search Modal -->
+  <div class="search-modal-backdrop" id="search-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Site Search">
+    <div class="search-modal-dialog">
+      <div class="search-input-header">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="11" cy="11" r="8"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+        <input type="search" id="global-search-input" placeholder="Search programmes, team, governance, donate..." autocomplete="off">
+        <button class="search-close-btn" id="search-close-btn" aria-label="Close search">&times;</button>
+      </div>
+      <div class="search-results-container" id="search-results-list">
+        <!-- Results dynamically populated by js/main.js -->
+      </div>
+    </div>
+  </div>
+
+  <button class="back-to-top" aria-label="Back to top">&uarr;</button>
+
+  <!-- Interactive JavaScript Controller -->
+  <script src="js/main.js?v=3.5" defer></script>
+</body>
+</html>
