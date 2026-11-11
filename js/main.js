@@ -1492,167 +1492,248 @@ document.addEventListener('DOMContentLoaded', () => {
      ================================================================= */
 
   function initGeographicMap() {
-    const mapContainer = qs('.india-map-container');
+    const mapContainer = qs('#india-map-container') || qs('.india-map-container');
     if (!mapContainer) return;
 
-    // State data – ASPIRE India's operational presence
-    const stateData = {
-      odisha: {
+    const mapData = window.INDIA_MAP_DATA;
+    if (!mapData || !Array.isArray(mapData.locations)) return;
+
+    // Exact ASPIRE Operational Footprint by State ID (matching SVG state IDs)
+    const activeStates = {
+      or: {
         name: 'Odisha',
-        info: 'Education Signature Program across Keonjhar, Sundargarh, Jajpur & Dhenkanal districts. Foundational Literacy & Numeracy, Anganwadi support, and Community Education Resource Centres.',
+        shortLabel: 'Odisha',
+        tag: 'Primary Saturation State',
+        districts: 'Keonjhar, Sundargarh, Jajpur & Dhenkanal (4 Districts • 19 Blocks)',
+        tooltipStat: '6,31,148 Children • 3,679 Govt. Schools',
+        metrics: [
+          { val: '6,31,148', lbl: 'Children (3–16 yrs)' },
+          { val: '3,679', lbl: 'Government Schools' },
+          { val: '4,600', lbl: 'Anganwadi Centres' },
+          { val: '6,487', lbl: 'Habitations Covered' },
+        ],
+        summary: 'Flagship Education Signature Program spanning 415 Gram Panchayats & 5.63 lakh households with full Child Labour Free Zone saturation, Foundational Literacy & Numeracy (FLN), and CERCs.',
+        labelOffset: { dx: 0, dy: 4, tx: 9, ty: 6, anchor: 'start' },
       },
-      jharkhand: {
+      jh: {
         name: 'Jharkhand',
-        info: 'Working in West Singhbhum district including Noamundi, Jagannathpur & Hatgamharia blocks. Saranda Girls\u2019 Residential Bridge Course and government school & Anganwadi support.',
+        shortLabel: 'Jharkhand',
+        tag: 'Deep Tribal & Forest Belt',
+        districts: 'West Singhbhum & Saranda Forest (18 Administrative Blocks)',
+        tooltipStat: '92,439 Children • 2,084 Govt. Schools',
+        metrics: [
+          { val: '92,439', lbl: 'Children (3–16 yrs)' },
+          { val: '2,084', lbl: 'Government Schools' },
+          { val: '2,348', lbl: 'Anganwadi Centres' },
+          { val: '6,519', lbl: 'Habitations Covered' },
+        ],
+        summary: 'Working across 217 Gram Panchayats & 2.99 lakh households in West Singhbhum, operating the Saranda Girls\u2019 Residential Bridge Course alongside government schools & Anganwadis.',
+        labelOffset: { dx: -4, dy: 0, tx: -9, ty: 2, anchor: 'end' },
       },
-      'west-bengal': {
+      wb: {
         name: 'West Bengal',
-        info: 'Community-based education programmes, adolescent empowerment, and teacher capacity-building initiatives in underserved districts.',
+        shortLabel: 'West Bengal',
+        tag: 'Community Saturation Belt',
+        districts: 'West Midnapore (Kharagpur-1), Purulia & Bankura',
+        tooltipStat: '23,342+ Children • 473 Habitations',
+        metrics: [
+          { val: '23,342+', lbl: 'Children (3–16 yrs)' },
+          { val: '473', lbl: 'Habitations Mobilized' },
+          { val: '23,399+', lbl: 'Households Reached' },
+          { val: '4', lbl: 'Core Anchals Saturated' },
+        ],
+        summary: 'Strengthening rural government primary schools across Arjuni, Kalaikunda, Borkola & Hariatara anchals along with adolescent empowerment and teacher circles in Purulia & Bankura.',
+        labelOffset: { dx: 10, dy: 14, tx: 9, ty: 5, anchor: 'start' },
       },
-      chhattisgarh: {
+      ct: {
         name: 'Chhattisgarh',
-        info: 'Education interventions in tribal-dominated regions, strengthening public schooling systems and foundational learning.',
+        shortLabel: 'Chhattisgarh',
+        tag: 'Tribal Public School Belt',
+        districts: 'Tribal-Dominated Aspirational Blocks',
+        tooltipStat: 'Public School Strengthening • FLN & SMC Ownership',
+        metrics: [
+          { val: '100%', lbl: 'Govt. School Focus' },
+          { val: 'FLN', lbl: 'Activity-Based Pedagogy' },
+          { val: 'SMC', lbl: 'Parent Co-Governance' },
+          { val: 'CLFZ', lbl: 'Child Protection Mobilization' },
+        ],
+        summary: 'Education interventions in tribal-dominated regions strengthening existing public primary schools, foundational reading fluency, and Gram Panchayat accountability.',
+        labelOffset: { dx: -8, dy: 2, tx: -9, ty: 4, anchor: 'end' },
       },
-      delhi: {
-        name: 'Delhi',
-        info: 'Urban education initiatives, policy advocacy, and programme coordination. ASPIRE\u2019s national office and strategic partnerships hub.',
+      br: {
+        name: 'Bihar',
+        shortLabel: 'Bihar',
+        tag: 'Foundational Learning Belt',
+        districts: 'Gaya & Underserved Rural Clusters',
+        tooltipStat: 'Community Monitoring & Foundational Learning',
+        metrics: [
+          { val: 'FLN', lbl: 'Foundational Literacy Kits' },
+          { val: 'NRBC', lbl: 'Bridge Course Catch-Up' },
+          { val: 'VEC', lbl: 'Village Education Committees' },
+          { val: '99%', lbl: 'Transition Retention Target' },
+        ],
+        summary: 'Equipping rural primary teachers with bilingual teaching-learning tools and engaging Village Education Committees to keep every child learning in public classrooms.',
+        labelOffset: { dx: 0, dy: -6, tx: 9, ty: -3, anchor: 'start' },
+      },
+      dl: {
+        name: 'Delhi NCR',
+        shortLabel: 'Delhi',
+        tag: 'National Hub & Urban Education',
+        districts: 'New Delhi (Sarvodaya Enclave HQ) & Urban Settlements',
+        tooltipStat: 'National Secretariat • Policy & Urban Learning',
+        metrics: [
+          { val: 'HQ', lbl: 'National Secretariat' },
+          { val: 'Urban', lbl: 'Delhi Education Project' },
+          { val: '3,389', lbl: 'National Volunteer Network' },
+          { val: '2,534', lbl: 'Team Nationwide' },
+        ],
+        summary: 'Houses ASPIRE\u2019s National Secretariat, research & monitoring cell, CSR institutional alliances, and urban education support programmes for vulnerable migrant families.',
+        labelOffset: { dx: -4, dy: -6, tx: 9, ty: 3, anchor: 'start' },
       },
     };
 
-    // Check if SVG map already exists in HTML (server-rendered)
-    const existingSvg = qs('svg.india-map', mapContainer);
-    if (existingSvg) {
-      attachMapInteractions(existingSvg, stateData);
-      return;
-    }
-
-    // Build a simplified SVG India outline map
     const svgNS = 'http://www.w3.org/2000/svg';
     const svg = document.createElementNS(svgNS, 'svg');
-    svg.setAttribute('viewBox', '0 0 600 700');
-    svg.setAttribute('class', 'india-map');
+    svg.setAttribute('viewBox', mapData.viewBox || '0 0 612 696');
+    svg.setAttribute('class', 'india-map-svg');
     svg.setAttribute('role', 'img');
-    svg.setAttribute('aria-label', 'Map of India highlighting ASPIRE operational states: Odisha, Jharkhand, West Bengal, Chhattisgarh, and Delhi');
-    svg.setAttribute('xmlns', svgNS);
+    svg.setAttribute('aria-label', 'Interactive Map of India highlighting ASPIRE operational states: Odisha, Jharkhand, West Bengal, Chhattisgarh, Bihar, and Delhi NCR');
 
-    // Simplified India outline
-    const indiaOutline = document.createElementNS(svgNS, 'path');
-    indiaOutline.setAttribute('class', 'india-outline');
-    indiaOutline.setAttribute(
-      'd',
-      'M265,30 L290,25 L310,35 L340,30 L360,40 L385,35 L400,50 L420,55 ' +
-      'L445,50 L460,60 L470,80 L480,100 L490,120 L485,140 L475,155 ' +
-      'L490,170 L500,190 L495,210 L505,230 L510,250 L500,270 L490,290 ' +
-      'L480,310 L470,330 L465,350 L475,370 L480,390 L470,410 L460,430 ' +
-      'L445,445 L430,460 L415,470 L400,480 L385,500 L370,515 L355,530 ' +
-      'L340,550 L325,565 L310,575 L295,590 L280,600 L265,610 L255,625 ' +
-      'L245,640 L238,650 L232,645 L228,630 L220,615 L210,600 L195,585 ' +
-      'L180,575 L165,560 L155,545 L145,525 L135,505 L130,490 L125,470 ' +
-      'L120,450 L115,430 L110,410 L105,390 L108,370 L115,350 L120,330 ' +
-      'L110,310 L100,295 L95,275 L100,255 L110,240 L120,225 L115,205 ' +
-      'L110,185 L105,165 L110,145 L120,130 L135,120 L150,110 L165,95 ' +
-      'L180,80 L195,65 L210,55 L225,45 L240,35 Z'
-    );
-    indiaOutline.setAttribute('fill', '#e8e8e8');
-    indiaOutline.setAttribute('stroke', '#ccc');
-    indiaOutline.setAttribute('stroke-width', '1.5');
-    svg.appendChild(indiaOutline);
+    const baseGroup = document.createElementNS(svgNS, 'g');
+    const activeGroup = document.createElementNS(svgNS, 'g');
+    const pinGroup = document.createElementNS(svgNS, 'g');
 
-    // State regions (simplified polygons representing approximate positions)
-    const stateShapes = [
-      {
-        id: 'delhi',
-        d: 'M275,170 L285,165 L295,170 L295,180 L285,185 L275,180 Z',
-        cx: 285,
-        cy: 175,
-      },
-      {
-        id: 'chhattisgarh',
-        d: 'M330,320 L360,305 L385,315 L395,340 L390,365 L375,380 L355,385 L335,375 L320,355 L325,335 Z',
-        cx: 358,
-        cy: 345,
-      },
-      {
-        id: 'jharkhand',
-        d: 'M370,260 L400,250 L420,260 L425,280 L415,300 L395,310 L375,305 L365,285 Z',
-        cx: 395,
-        cy: 280,
-      },
-      {
-        id: 'west-bengal',
-        d: 'M415,230 L440,225 L455,240 L460,265 L455,290 L445,310 L430,320 L415,310 L410,290 L405,265 L410,245 Z',
-        cx: 435,
-        cy: 270,
-      },
-      {
-        id: 'odisha',
-        d: 'M380,310 L410,305 L435,320 L445,345 L440,370 L425,385 L405,390 L385,380 L370,360 L370,335 Z',
-        cx: 410,
-        cy: 350,
-      },
-    ];
+    svg.appendChild(baseGroup);
+    svg.appendChild(activeGroup);
+    svg.appendChild(pinGroup);
 
-    stateShapes.forEach((state) => {
-      const group = document.createElementNS(svgNS, 'g');
-      group.setAttribute('class', 'map-state');
-      group.setAttribute('data-state', state.id);
-      group.setAttribute('tabindex', '0');
-      group.setAttribute('role', 'button');
-      group.setAttribute(
-        'aria-label',
-        stateData[state.id].name + ': ' + stateData[state.id].info
-      );
+    const stateNodes = {};
+    const pinNodes = {};
 
+    // First render all 36 Indian states & UTs cleanly
+    mapData.locations.forEach((loc) => {
       const path = document.createElementNS(svgNS, 'path');
-      path.setAttribute('d', state.d);
-      path.setAttribute('class', 'map-state-path');
+      path.setAttribute('d', loc.path);
+      path.setAttribute('data-state-id', loc.id);
+      path.setAttribute('aria-label', loc.name);
 
-      const label = document.createElementNS(svgNS, 'text');
-      label.setAttribute('x', state.cx.toString());
-      label.setAttribute('y', state.cy.toString());
-      label.setAttribute('class', 'map-state-label');
-      label.setAttribute('text-anchor', 'middle');
-      label.setAttribute('dominant-baseline', 'central');
-      label.setAttribute('aria-hidden', 'true');
-      label.textContent = stateData[state.id].name;
-
-      group.appendChild(path);
-      group.appendChild(label);
-      svg.appendChild(group);
+      if (activeStates[loc.id]) {
+        path.setAttribute('class', 'map-state-shape map-state-active');
+        path.setAttribute('tabindex', '0');
+        path.setAttribute('role', 'button');
+        path.setAttribute('aria-label', `${activeStates[loc.id].name}: ${activeStates[loc.id].tooltipStat}`);
+        activeGroup.appendChild(path);
+        stateNodes[loc.id] = path;
+      } else {
+        path.setAttribute('class', 'map-state-shape');
+        baseGroup.appendChild(path);
+      }
     });
 
-    mapContainer.insertBefore(svg, mapContainer.firstChild);
-    attachMapInteractions(svg, stateData);
-  }
+    // Clear container except tooltip before appending SVG
+    const tooltip = qs('#india-map-tooltip', mapContainer) || qs('.map-tooltip', mapContainer);
+    mapContainer.insertBefore(svg, tooltip || mapContainer.firstChild);
 
-  function attachMapInteractions(svg, stateData) {
-    const tooltip = qs('.map-tooltip');
-    const states = qsa('.map-state', svg);
-    let activeState = null;
+    // Add interactive pulsing pin dots at true centroids of highlighted states
+    Object.keys(activeStates).forEach((id) => {
+      const path = stateNodes[id];
+      if (!path) return;
+      const bbox = path.getBBox();
+      const offset = activeStates[id].labelOffset || { dx: 0, dy: 0 };
+      const cx = bbox.x + bbox.width / 2 + offset.dx;
+      const cy = bbox.y + bbox.height / 2 + offset.dy;
 
-    function showTooltip(stateId, anchorElement) {
-      if (!tooltip || !stateData[stateId]) return;
+      const g = document.createElementNS(svgNS, 'g');
+      g.setAttribute('class', 'map-pin-group');
+      g.setAttribute('data-state-id', id);
 
-      const data = stateData[stateId];
-      const titleEl = qs('.map-tooltip-title', tooltip);
-      const infoEl = qs('.map-tooltip-info', tooltip);
+      const pulseCircle = document.createElementNS(svgNS, 'circle');
+      pulseCircle.setAttribute('cx', cx.toFixed(1));
+      pulseCircle.setAttribute('cy', cy.toFixed(1));
+      pulseCircle.setAttribute('r', '10');
+      pulseCircle.setAttribute('class', 'map-pin-pulse');
 
-      if (titleEl) titleEl.textContent = data.name;
-      if (infoEl) infoEl.textContent = data.info;
+      const dotCircle = document.createElementNS(svgNS, 'circle');
+      dotCircle.setAttribute('cx', cx.toFixed(1));
+      dotCircle.setAttribute('cy', cy.toFixed(1));
+      dotCircle.setAttribute('r', '4.8');
+      dotCircle.setAttribute('class', 'map-pin-dot');
+
+      const label = document.createElementNS(svgNS, 'text');
+      label.setAttribute('x', (cx + (offset.tx ?? 8)).toFixed(1));
+      label.setAttribute('y', (cy + (offset.ty ?? 3)).toFixed(1));
+      label.setAttribute('text-anchor', offset.anchor || 'start');
+      label.setAttribute('class', 'map-pin-label');
+      label.textContent = activeStates[id].shortLabel;
+
+      g.appendChild(pulseCircle);
+      g.appendChild(dotCircle);
+      g.appendChild(label);
+      pinGroup.appendChild(g);
+      pinNodes[id] = g;
+    });
+
+    // Inspector UI elements
+    const pills = qsa('#india-state-pills .state-pill-btn');
+    const tagEl = qs('#state-detail-tag');
+    const nameEl = qs('#state-detail-name');
+    const distEl = qs('#state-detail-districts');
+    const metricsEl = qs('#state-metrics-grid');
+    const summaryEl = qs('#state-detail-summary');
+    const tooltipTitle = qs('#map-tooltip-title');
+    const tooltipInfo = qs('#map-tooltip-info');
+
+    let selectedStateId = 'or';
+
+    function selectState(stateId) {
+      const info = activeStates[stateId];
+      if (!info) return;
+      selectedStateId = stateId;
+
+      Object.keys(stateNodes).forEach((id) => {
+        stateNodes[id].classList.toggle('is-selected', id === stateId);
+        if (pinNodes[id]) pinNodes[id].classList.toggle('is-selected', id === stateId);
+      });
+
+      pills.forEach((btn) => {
+        btn.classList.toggle('is-active', btn.getAttribute('data-state-id') === stateId);
+      });
+
+      if (tagEl) tagEl.textContent = info.tag;
+      if (nameEl) nameEl.textContent = info.name;
+      if (distEl) distEl.textContent = info.districts;
+      if (summaryEl) summaryEl.textContent = info.summary;
+      if (metricsEl) {
+        metricsEl.innerHTML = info.metrics
+          .map(
+            (m) => `
+              <div class="state-metric-box">
+                <div class="state-metric-val">${m.val}</div>
+                <div class="state-metric-lbl">${m.lbl}</div>
+              </div>
+            `
+          )
+          .join('');
+      }
+    }
+
+    function showTooltip(stateId) {
+      if (!tooltip || !activeStates[stateId]) return;
+      const info = activeStates[stateId];
+      const anchor = pinNodes[stateId] || stateNodes[stateId];
+      if (tooltipTitle) tooltipTitle.textContent = info.name;
+      if (tooltipInfo) tooltipInfo.textContent = info.tooltipStat;
 
       tooltip.classList.add('is-visible');
       tooltip.setAttribute('aria-hidden', 'false');
 
-      // Position tooltip near the state
-      if (anchorElement) {
-        const rect = anchorElement.getBoundingClientRect();
-        const containerRect = svg.closest('.india-map-container').getBoundingClientRect();
-
+      if (anchor) {
+        const rect = anchor.getBoundingClientRect();
+        const containerRect = mapContainer.getBoundingClientRect();
         const left = rect.left - containerRect.left + rect.width / 2;
         const top = rect.top - containerRect.top - 10;
-
-        tooltip.style.left = left + 'px';
-        tooltip.style.top = top + 'px';
+        tooltip.style.left = Math.max(85, Math.min(containerRect.width - 85, left)) + 'px';
+        tooltip.style.top = Math.max(48, top) + 'px';
         tooltip.style.transform = 'translate(-50%, -100%)';
       }
     }
@@ -1663,65 +1744,46 @@ document.addEventListener('DOMContentLoaded', () => {
       tooltip.setAttribute('aria-hidden', 'true');
     }
 
-    states.forEach((stateGroup) => {
-      const stateId = stateGroup.getAttribute('data-state');
-
-      // Hover interactions
-      stateGroup.addEventListener('mouseenter', () => {
-        stateGroup.classList.add('is-hovered');
-        showTooltip(stateId, stateGroup);
-      });
-
-      stateGroup.addEventListener('mouseleave', () => {
-        stateGroup.classList.remove('is-hovered');
-        if (activeState !== stateId) {
+    // Bind events on both SVG state shapes and pins
+    Object.keys(activeStates).forEach((id) => {
+      const targets = [stateNodes[id], pinNodes[id]].filter(Boolean);
+      targets.forEach((el) => {
+        el.addEventListener('mouseenter', () => {
+          stateNodes[id].classList.add('is-hovered');
+          showTooltip(id);
+          selectState(id);
+        });
+        el.addEventListener('mouseleave', () => {
+          stateNodes[id].classList.remove('is-hovered');
           hideTooltip();
-        }
-      });
-
-      // Click/keyboard interactions
-      stateGroup.addEventListener('click', () => {
-        if (activeState === stateId) {
-          activeState = null;
-          stateGroup.classList.remove('is-active');
-          hideTooltip();
-        } else {
-          // Deactivate previous
-          states.forEach((s) => s.classList.remove('is-active'));
-          activeState = stateId;
-          stateGroup.classList.add('is-active');
-          showTooltip(stateId, stateGroup);
-          trackEvent('pillar_view', 'map_state_click', stateData[stateId].name);
-        }
-      });
-
-      stateGroup.addEventListener('keydown', (e) => {
-        if (e.key === 'Enter' || e.key === ' ') {
-          e.preventDefault();
-          stateGroup.click();
-        }
-      });
-
-      // Focus interactions
-      stateGroup.addEventListener('focus', () => {
-        showTooltip(stateId, stateGroup);
-      });
-
-      stateGroup.addEventListener('blur', () => {
-        if (activeState !== stateId) {
-          hideTooltip();
-        }
+        });
+        el.addEventListener('click', () => {
+          selectState(id);
+          showTooltip(id);
+          trackEvent('map_state_click', 'clicked', activeStates[id].name);
+        });
+        el.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            selectState(id);
+            showTooltip(id);
+          }
+        });
       });
     });
 
-    // Close tooltip on Escape
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && activeState) {
-        states.forEach((s) => s.classList.remove('is-active'));
-        activeState = null;
-        hideTooltip();
-      }
+    // Bind quick-select pill buttons
+    pills.forEach((btn) => {
+      const id = btn.getAttribute('data-state-id');
+      btn.addEventListener('mouseenter', () => selectState(id));
+      btn.addEventListener('click', () => {
+        selectState(id);
+        trackEvent('map_pill_click', 'clicked', activeStates[id] ? activeStates[id].name : id);
+      });
     });
+
+    // Default initial state
+    selectState(selectedStateId);
   }
 
   /* =================================================================
@@ -1739,20 +1801,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const storyData = [
       {
-        location: 'Joyful Learning Spaces • Keonjhar, Odisha',
-        caption: 'Transforming public schools into joyful hubs of learning where children discover their potential.'
+        location: 'Joyful Classrooms • Odisha',
+        caption: 'Turning village public schools into joyful learning hubs.'
       },
       {
-        location: 'Foundational Learning (FLN) • Classroom Transformation',
-        caption: 'Empowering teachers with activity-based toolkits so every child builds solid reading & numeracy foundations.'
+        location: 'Foundational Learning • FLN',
+        caption: 'Equipping public teachers with activity-based bilingual kits.'
       },
       {
-        location: 'Universal Access • 80,000+ Children Mainstreamed',
-        caption: 'Ensuring children from tribal and mining habitations enroll, stay in school, and complete secondary education.'
+        location: 'Universal Access • 80,000+ Children',
+        caption: 'Bringing out-of-school children back into public schools.'
       },
       {
-        location: 'Empowering Child Agency • Democratic Public Education',
-        caption: 'Cultivating leadership, curiosity, and confidence so children become changemakers in their communities.'
+        location: 'Child Agency • 14,895 Habitations',
+        caption: 'Building student confidence and community-led child safety.'
       }
     ];
 
@@ -1822,9 +1884,180 @@ document.addEventListener('DOMContentLoaded', () => {
     if (heroSection) {
       heroSection.addEventListener('mouseenter', stopTimer);
       heroSection.addEventListener('mouseleave', startTimer);
+
+      // Mobile touch swipe support for hero slideshow
+      let touchStartX = 0;
+      heroSection.addEventListener('touchstart', (e) => {
+        if (e.changedTouches && e.changedTouches.length) {
+          touchStartX = e.changedTouches[0].screenX;
+        }
+      }, { passive: true });
+      heroSection.addEventListener('touchend', (e) => {
+        if (!e.changedTouches || !e.changedTouches.length) return;
+        const diff = e.changedTouches[0].screenX - touchStartX;
+        if (Math.abs(diff) > 48) {
+          goToSlide(diff < 0 ? currentIndex + 1 : currentIndex - 1);
+          startTimer();
+        }
+      }, { passive: true });
     }
 
     startTimer();
+  }
+
+  /* =================================================================
+     16D. INTERACTIVE ECOSYSTEM EXPLORER (SECTION 2)
+     ================================================================= */
+  function initEcosystemExplorer() {
+    const nodes = qsa('#ecosystem-nodes .eco-node');
+    const titleEl = qs('#eco-spotlight-title');
+    const descEl = qs('#eco-spotlight-desc');
+
+    if (nodes.length && titleEl && descEl) {
+      function activateNode(node) {
+        nodes.forEach((n) => n.classList.remove('is-active'));
+        node.classList.add('is-active');
+        titleEl.textContent = node.getAttribute('data-eco-title') || '';
+        descEl.textContent = node.getAttribute('data-eco-desc') || '';
+      }
+
+      nodes.forEach((node) => {
+        node.addEventListener('mouseenter', () => activateNode(node));
+        node.addEventListener('click', () => activateNode(node));
+        node.addEventListener('focus', () => activateNode(node));
+      });
+    }
+  }
+
+  /* =================================================================
+     16E. PILLARS & CORE BELIEFS MODAL POPUP CONTROLLER (DESKTOP & MOBILE)
+     ================================================================= */
+  function initPillarPopups() {
+    const cards = qsa('.pillar-showcase-card[data-pillar-id]');
+    const modal = qs('#pillar-detail-modal');
+    if (!cards.length || !modal) return;
+
+    const closeBtn = qs('#pillar-modal-close', modal);
+    const dismissBtn = qs('#pillar-modal-dismiss', modal);
+    const imgEl = qs('#pillar-modal-img', modal);
+    const badgeEl = qs('#pillar-modal-badge', modal);
+    const titleEl = qs('#pillar-modal-title', modal);
+    const subheadEl = qs('#pillar-modal-subhead', modal);
+    const label1El = qs('#pillar-modal-label-1', modal);
+    const label2El = qs('#pillar-modal-label-2', modal);
+    const problemEl = qs('#pillar-modal-problem', modal);
+    const solutionEl = qs('#pillar-modal-solution', modal);
+    const impactEl = qs('#pillar-modal-impact', modal);
+    const ctaEl = qs('#pillar-modal-cta', modal);
+
+    function openPillarModal(card) {
+      if (imgEl) imgEl.src = card.getAttribute('data-pillar-img') || '';
+      if (badgeEl) badgeEl.textContent = card.getAttribute('data-pillar-badge') || '';
+      if (titleEl) titleEl.textContent = card.getAttribute('data-pillar-title') || '';
+      if (subheadEl) subheadEl.textContent = card.getAttribute('data-pillar-subhead') || '';
+      if (label1El) label1El.textContent = card.getAttribute('data-label-1') || 'The Ground Reality';
+      if (label2El) label2El.textContent = card.getAttribute('data-label-2') || 'How ASPIRE Solves It';
+      if (problemEl) problemEl.textContent = card.getAttribute('data-pillar-problem') || '';
+      if (solutionEl) solutionEl.textContent = card.getAttribute('data-pillar-solution') || '';
+      if (impactEl) impactEl.textContent = card.getAttribute('data-pillar-impact') || '';
+      if (ctaEl) {
+        ctaEl.href = card.getAttribute('data-pillar-link') || 'pages/programmes.html';
+        ctaEl.innerHTML = (card.getAttribute('data-pillar-cta') || 'Learn More') + ' &rarr;';
+      }
+
+      modal.classList.add('is-open');
+      modal.setAttribute('aria-hidden', 'false');
+      document.body.classList.add('no-scroll');
+    }
+
+    function closePillarModal() {
+      modal.classList.remove('is-open');
+      modal.setAttribute('aria-hidden', 'true');
+      document.body.classList.remove('no-scroll');
+    }
+
+    cards.forEach((card) => {
+      card.addEventListener('click', () => openPillarModal(card));
+      card.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          openPillarModal(card);
+        }
+      });
+    });
+
+    if (closeBtn) closeBtn.addEventListener('click', closePillarModal);
+    if (dismissBtn) dismissBtn.addEventListener('click', closePillarModal);
+
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) closePillarModal();
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && modal.classList.contains('is-open')) {
+        closePillarModal();
+      }
+    });
+  }
+
+  function initTeamPopups() {
+    const cards = qsa('.profile-showcase-card[data-member-name]');
+    const modal = qs('#team-detail-modal');
+    if (!cards.length || !modal) return;
+
+    const closeBtn = qs('#team-modal-close', modal);
+    const dismissBtn = qs('#team-modal-dismiss', modal);
+    const imgEl = qs('#team-modal-img', modal);
+    const badgeEl = qs('#team-modal-badge', modal);
+    const nameEl = qs('#team-modal-name', modal);
+    const roleEl = qs('#team-modal-role', modal);
+    const bioEl = qs('#team-modal-bio', modal);
+    const focusEl = qs('#team-modal-focus', modal);
+
+    function openTeamModal(card) {
+      if (imgEl) {
+        imgEl.src = card.getAttribute('data-member-img') || '../images/dayaram.jpg';
+        imgEl.alt = card.getAttribute('data-member-name') || 'Team member';
+      }
+      if (badgeEl) badgeEl.textContent = card.getAttribute('data-member-badge') || '';
+      if (nameEl) nameEl.textContent = card.getAttribute('data-member-name') || '';
+      if (roleEl) roleEl.textContent = card.getAttribute('data-member-role') || '';
+      if (bioEl) bioEl.textContent = card.getAttribute('data-member-bio') || '';
+      if (focusEl) focusEl.textContent = card.getAttribute('data-member-focus') || '';
+
+      modal.classList.add('is-open');
+      modal.setAttribute('aria-hidden', 'false');
+      document.body.classList.add('no-scroll');
+    }
+
+    function closeTeamModal() {
+      modal.classList.remove('is-open');
+      modal.setAttribute('aria-hidden', 'true');
+      document.body.classList.remove('no-scroll');
+    }
+
+    cards.forEach((card) => {
+      card.addEventListener('click', () => openTeamModal(card));
+      card.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          openTeamModal(card);
+        }
+      });
+    });
+
+    if (closeBtn) closeBtn.addEventListener('click', closeTeamModal);
+    if (dismissBtn) dismissBtn.addEventListener('click', closeTeamModal);
+
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) closeTeamModal();
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && modal.classList.contains('is-open')) {
+        closeTeamModal();
+      }
+    });
   }
 
   function initDirectoryTabs() {
@@ -1837,11 +2070,11 @@ document.addEventListener('DOMContentLoaded', () => {
         btn.classList.add('is-active');
 
         const category = btn.getAttribute('data-tab');
-        const cards = qsa('.profile-card[data-category]');
+        const cards = qsa('.profile-card[data-category], .profile-showcase-card[data-category]');
 
         cards.forEach((card) => {
           if (category === 'all' || card.getAttribute('data-category') === category) {
-            card.style.display = 'flex';
+            card.style.display = card.classList.contains('profile-showcase-card') ? 'block' : 'flex';
           } else {
             card.style.display = 'none';
           }
@@ -1969,6 +2202,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Homepage-specific
   initHeroSlideshow();
+  initEcosystemExplorer();
+  initPillarPopups();
   initImpactCounters();
   initTestimonialCarousel();
   initGeographicMap();
@@ -1977,6 +2212,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initDonationForm();
   initPartnershipForm();
   initDirectoryTabs();
+  initTeamPopups();
 
   // Track CTA clicks
   qsa('[data-track]').forEach((el) => {

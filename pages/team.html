@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400;1,6..72,600&family=Outfit:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../css/styles.css?v=5.0">
+  <link rel="stylesheet" href="../css/styles.css?v=5.9">
 </head>
 <body>
   <a href="#main-content" class="skip-to-content">Skip to main content</a>
@@ -113,159 +113,329 @@
           <button type="button" class="dir-tab-btn" data-tab="field">Field Operations</button>
         </div>
 
-        <div class="team-grid reveal-stagger">
+        <div class="team-showcase-grid reveal-stagger">
           <!-- 1. Dayaram -->
-          <article class="profile-card" data-category="leadership" style="border-top: 4px solid var(--brand-primary);">
-            <div class="profile-header">
-              <img src="../images/dayaram.jpg" alt="Dayaram - Executive Director &amp; Founder" class="profile-avatar-img" style="object-position: center top;">
-              <div class="profile-info">
-                <h3>Dayaram</h3>
-                <div class="profile-role">Executive Director / Founder</div>
-              </div>
+          <article class="profile-showcase-card" tabindex="0" role="button" data-category="leadership"
+            data-member-name="Dayaram"
+            data-member-role="Executive Director / Founder"
+            data-member-badge="Core Leadership"
+            data-member-img="../images/dayaram.jpg"
+            data-member-bio="Former Education Head at Aga Khan Foundation (New Delhi) and Chief Consultant for 7 years in the Alternative Schooling Unit under DPEP / Sarva Shiksha Abhiyan (Ministry of Education, GoI). M.Phil. in Sociology from JNU. Over 30 years driving grassroots child rights and public school equity."
+            data-member-focus="30+ Years Leading Public Education & Child Rights Reform">
+            <img src="../images/dayaram.jpg" alt="Dayaram — Executive Director &amp; Founder" class="team-card-img" style="object-position: center 15%;" loading="lazy">
+            <div class="team-card-scrim" aria-hidden="true"></div>
+            <span class="team-badge-top">Core Leadership</span>
+
+            <div class="team-front-content">
+              <h3>Dayaram</h3>
+              <p class="team-front-role">Executive Director / Founder</p>
+              <button type="button" class="team-know-more-btn">Know More &rarr;</button>
             </div>
-            <p class="profile-bio">
-              Former Education Head at Aga Khan Foundation (New Delhi) and Chief Consultant for 7 years in the Alternative Schooling Unit under DPEP / Sarva Shiksha Abhiyan (Ministry of Education, GoI). M.Phil. in Sociology from JNU. Over 30 years driving grassroots child rights and school equity.
-            </p>
+
+            <div class="team-hover-popup" aria-hidden="true">
+              <span class="popup-tag">Core Leadership</span>
+              <h4>Dayaram</h4>
+              <div class="popup-role-sub">Executive Director / Founder</div>
+              <p class="popup-easy-desc">Former Education Head at Aga Khan Foundation &amp; Chief Consultant under DPEP/SSA (GoI). JNU alumnus with 30+ years leading grassroots school equity.</p>
+              <div class="popup-read-more">Full Profile &rarr;</div>
+            </div>
           </article>
 
           <!-- 2. Dayanand Thakur -->
-          <article class="profile-card" data-category="leadership" style="border-top: 4px solid var(--brand-primary);">
-            <div class="profile-header">
-              <div class="profile-avatar" style="width: 74px; height: 74px; border-radius: 50%; background: #e0f2fe; color: #0284c7; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.5rem;">DT</div>
-              <div class="profile-info">
-                <h3>Dayanand Thakur</h3>
-                <div class="profile-role">Director, Finance &amp; Governance</div>
-              </div>
+          <article class="profile-showcase-card" tabindex="0" role="button" data-category="leadership"
+            data-member-name="Dayanand Thakur"
+            data-member-role="Director, Finance &amp; Governance"
+            data-member-badge="Core Leadership"
+            data-member-img="../images/team-dayanand.jpg"
+            data-member-bio="Directs financial operations, compliance reporting, statutory disclosures, and FCRA audits. Ensures every rupee is deployed with absolute fiduciary transparency across our multi-state field network."
+            data-member-focus="Fiduciary Governance, Statutory Audits &amp; FCRA Stewardship">
+            <img src="../images/team-dayanand.jpg" alt="Dayanand Thakur — Director, Finance &amp; Governance" class="team-card-img" style="object-position: center 15%;" loading="lazy">
+            <div class="team-card-scrim" aria-hidden="true"></div>
+            <span class="team-badge-top">Core Leadership</span>
+
+            <div class="team-front-content">
+              <h3>Dayanand Thakur</h3>
+              <p class="team-front-role">Director, Finance &amp; Governance</p>
+              <button type="button" class="team-know-more-btn">Know More &rarr;</button>
             </div>
-            <p class="profile-bio">
-              Directs financial operations, compliance reporting, statutory disclosures, and FCRA audits. Ensures every rupee is deployed with absolute fiduciary transparency across our multi-state field network.
-            </p>
+
+            <div class="team-hover-popup" aria-hidden="true">
+              <span class="popup-tag">Core Leadership</span>
+              <h4>Dayanand Thakur</h4>
+              <div class="popup-role-sub">Director, Finance &amp; Governance</div>
+              <p class="popup-easy-desc">Directs financial operations, statutory compliance, and FCRA audits &mdash; ensuring complete transparency across multi-state operations.</p>
+              <div class="popup-read-more">Full Profile &rarr;</div>
+            </div>
           </article>
 
           <!-- 3. Dr. Kartika Bhatia -->
-          <article class="profile-card" data-category="leadership" style="border-top: 4px solid var(--brand-primary);">
-            <div class="profile-header">
-              <div class="profile-avatar" style="width: 74px; height: 74px; border-radius: 50%; background: #fef3c7; color: #b45309; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.5rem;">KB</div>
-              <div class="profile-info">
-                <h3>Dr. Kartika Bhatia</h3>
-                <div class="profile-role">Lead, Research &amp; Evaluation</div>
-              </div>
+          <article class="profile-showcase-card" tabindex="0" role="button" data-category="leadership"
+            data-member-name="Dr. Kartika Bhatia"
+            data-member-role="Lead, Research &amp; Evaluation"
+            data-member-badge="Core Leadership"
+            data-member-img="../images/team-kartika.jpg"
+            data-member-bio="Leads longitudinal child assessment studies, randomized baseline/endline frameworks, and research collaborations with international academic partners including the University of St Andrews, Scotland."
+            data-member-focus="Longitudinal Assessments &amp; Global Academic Partnerships">
+            <img src="../images/team-kartika.jpg" alt="Dr. Kartika Bhatia — Lead, Research &amp; Evaluation" class="team-card-img" style="object-position: center 15%;" loading="lazy">
+            <div class="team-card-scrim" aria-hidden="true"></div>
+            <span class="team-badge-top">Core Leadership</span>
+
+            <div class="team-front-content">
+              <h3>Dr. Kartika Bhatia</h3>
+              <p class="team-front-role">Lead, Research &amp; Evaluation</p>
+              <button type="button" class="team-know-more-btn">Know More &rarr;</button>
             </div>
-            <p class="profile-bio">
-              Leads longitudinal child assessment studies, randomized baseline/endline frameworks, and research collaborations with international academic partners including the University of St Andrews, Scotland.
-            </p>
+
+            <div class="team-hover-popup" aria-hidden="true">
+              <span class="popup-tag">Core Leadership</span>
+              <h4>Dr. Kartika Bhatia</h4>
+              <div class="popup-role-sub">Lead, Research &amp; Evaluation</div>
+              <p class="popup-easy-desc">Leads longitudinal learning assessments and academic collaborations with University of St Andrews to measure real classroom impact.</p>
+              <div class="popup-read-more">Full Profile &rarr;</div>
+            </div>
           </article>
 
           <!-- 4. Prabodh Bhambal -->
-          <article class="profile-card" data-category="leadership" style="border-top: 4px solid var(--brand-primary);">
-            <div class="profile-header">
-              <div class="profile-avatar" style="width: 74px; height: 74px; border-radius: 50%; background: #ede9fe; color: #6d28d9; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.5rem;">PB</div>
-              <div class="profile-info">
-                <h3>Prabodh Bhambal</h3>
-                <div class="profile-role">Senior Advisor, Partnerships</div>
-              </div>
+          <article class="profile-showcase-card" tabindex="0" role="button" data-category="leadership"
+            data-member-name="Prabodh Bhambal"
+            data-member-role="Senior Advisor, Partnerships"
+            data-member-badge="Core Leadership"
+            data-member-img="../images/team-prabodh.jpg"
+            data-member-bio="Guides institutional alliances, multilateral engagements, and CSR coalitions to scale bridge learning centers and system-wide educational initiatives across underserved districts."
+            data-member-focus="CSR Coalitions, Philanthropy &amp; Institutional Alliances">
+            <img src="../images/team-prabodh.jpg" alt="Prabodh Bhambal — Senior Advisor, Partnerships" class="team-card-img" style="object-position: center 15%;" loading="lazy">
+            <div class="team-card-scrim" aria-hidden="true"></div>
+            <span class="team-badge-top">Core Leadership</span>
+
+            <div class="team-front-content">
+              <h3>Prabodh Bhambal</h3>
+              <p class="team-front-role">Senior Advisor, Partnerships</p>
+              <button type="button" class="team-know-more-btn">Know More &rarr;</button>
             </div>
-            <p class="profile-bio">
-              Guides institutional alliances, multilateral engagements, and CSR coalitions to scale bridge learning centers and system-wide educational initiatives.
-            </p>
+
+            <div class="team-hover-popup" aria-hidden="true">
+              <span class="popup-tag">Core Leadership</span>
+              <h4>Prabodh Bhambal</h4>
+              <div class="popup-role-sub">Senior Advisor, Partnerships</div>
+              <p class="popup-easy-desc">Guides institutional alliances and CSR coalitions to scale systemic public school transformation initiatives.</p>
+              <div class="popup-read-more">Full Profile &rarr;</div>
+            </div>
           </article>
 
           <!-- 5. Vinod Dhyani -->
-          <article class="profile-card" data-category="leadership" style="border-top: 4px solid var(--brand-primary);">
-            <div class="profile-header">
-              <div class="profile-avatar" style="width: 74px; height: 74px; border-radius: 50%; background: #fee2e2; color: #b91c1c; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.5rem;">VD</div>
-              <div class="profile-info">
-                <h3>Vinod Dhyani</h3>
-                <div class="profile-role">Lead, HR &amp; Administration</div>
-              </div>
+          <article class="profile-showcase-card" tabindex="0" role="button" data-category="leadership"
+            data-member-name="Vinod Dhyani"
+            data-member-role="Lead, HR &amp; Administration"
+            data-member-badge="Core Leadership"
+            data-member-img="../images/team-vinod.jpg"
+            data-member-bio="Oversees institutional talent management, capacity building programs, and logistics for ASPIRE&rsquo;s 2,500+ professionals and block offices across Odisha, Jharkhand, West Bengal, and Delhi."
+            data-member-focus="People Operations &amp; Multi-State Logistics">
+            <img src="../images/team-vinod.jpg" alt="Vinod Dhyani — Lead, HR &amp; Administration" class="team-card-img" style="object-position: center 15%;" loading="lazy">
+            <div class="team-card-scrim" aria-hidden="true"></div>
+            <span class="team-badge-top">Core Leadership</span>
+
+            <div class="team-front-content">
+              <h3>Vinod Dhyani</h3>
+              <p class="team-front-role">Lead, HR &amp; Administration</p>
+              <button type="button" class="team-know-more-btn">Know More &rarr;</button>
             </div>
-            <p class="profile-bio">
-              Oversees institutional talent management, capacity building programs, and logistics for ASPIRE’s block offices across Odisha, Jharkhand, West Bengal, and Delhi.
-            </p>
+
+            <div class="team-hover-popup" aria-hidden="true">
+              <span class="popup-tag">Core Leadership</span>
+              <h4>Vinod Dhyani</h4>
+              <div class="popup-role-sub">Lead, HR &amp; Administration</div>
+              <p class="popup-easy-desc">Oversees talent, capacity building, and field office operations supporting over 2,500 professionals across multiple states.</p>
+              <div class="popup-read-more">Full Profile &rarr;</div>
+            </div>
           </article>
 
           <!-- 6. Ravi Kumar -->
-          <article class="profile-card" data-category="specialists" style="border-top: 4px solid var(--brand-secondary);">
-            <div class="profile-header">
-              <div class="profile-avatar" style="width: 74px; height: 74px; border-radius: 50%; background: #dcfce7; color: #15803d; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.5rem;">RK</div>
-              <div class="profile-info">
-                <h3>Ravi Kumar</h3>
-                <div class="profile-role" style="color: var(--brand-secondary);">State Program Head (Odisha)</div>
-              </div>
+          <article class="profile-showcase-card" tabindex="0" role="button" data-category="specialists"
+            data-member-name="Ravi Kumar"
+            data-member-role="State Program Head (Odisha)"
+            data-member-badge="Program &amp; State Lead"
+            data-member-img="../images/team-ravi.jpg"
+            data-member-bio="Manages the Education Signature Program across Keonjhar, Jajpur, Sundargarh, and Dhenkanal. Leads district administration convergence, 3,679 government schools, and village-level saturation."
+            data-member-focus="Odisha State Operations &bull; 3,679 Schools &bull; 6.3L+ Children">
+            <img src="../images/team-ravi.jpg" alt="Ravi Kumar — State Program Head (Odisha)" class="team-card-img" style="object-position: center 15%;" loading="lazy">
+            <div class="team-card-scrim" aria-hidden="true"></div>
+            <span class="team-badge-top badge-green">State Lead</span>
+
+            <div class="team-front-content">
+              <h3>Ravi Kumar</h3>
+              <p class="team-front-role">State Program Head (Odisha)</p>
+              <button type="button" class="team-know-more-btn">Know More &rarr;</button>
             </div>
-            <p class="profile-bio">
-              Manages the Education Signature Program across Keonjhar, Jajpur, and Sundargarh. Leads district administration convergence and school saturation.
-            </p>
+
+            <div class="team-hover-popup" aria-hidden="true">
+              <span class="popup-tag">Program &amp; State Lead</span>
+              <h4>Ravi Kumar</h4>
+              <div class="popup-role-sub">State Program Head (Odisha)</div>
+              <p class="popup-easy-desc">Directs Odisha&rsquo;s Education Signature Program across Keonjhar, Jajpur &amp; Sundargarh with full district school convergence.</p>
+              <div class="popup-read-more">Full Profile &rarr;</div>
+            </div>
           </article>
 
           <!-- 7. Ganthulawar Naresh -->
-          <article class="profile-card" data-category="specialists" style="border-top: 4px solid var(--brand-secondary);">
-            <div class="profile-header">
-              <div class="profile-avatar" style="width: 74px; height: 74px; border-radius: 50%; background: #dcfce7; color: #15803d; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.5rem;">GN</div>
-              <div class="profile-info">
-                <h3>Ganthulawar Naresh</h3>
-                <div class="profile-role" style="color: var(--brand-secondary);">State Program Head (Jharkhand)</div>
-              </div>
+          <article class="profile-showcase-card" tabindex="0" role="button" data-category="specialists"
+            data-member-name="Ganthulawar Naresh"
+            data-member-role="State Program Head (Jharkhand)"
+            data-member-badge="Program &amp; State Lead"
+            data-member-img="../images/team-naresh.jpg"
+            data-member-bio="Directs residential bridge courses, adolescent girls&rsquo; education, and tribal community child rights forums across West Singhbhum and Saranda forest blocks covering 2,084 schools."
+            data-member-focus="Jharkhand Field Operations &bull; Saranda Forest Bridge Courses">
+            <img src="../images/team-naresh.jpg" alt="Ganthulawar Naresh — State Program Head (Jharkhand)" class="team-card-img" style="object-position: center 15%;" loading="lazy">
+            <div class="team-card-scrim" aria-hidden="true"></div>
+            <span class="team-badge-top badge-green">State Lead</span>
+
+            <div class="team-front-content">
+              <h3>Ganthulawar Naresh</h3>
+              <p class="team-front-role">State Program Head (Jharkhand)</p>
+              <button type="button" class="team-know-more-btn">Know More &rarr;</button>
             </div>
-            <p class="profile-bio">
-              Directs residential bridge courses, adolescent girls’ education, and tribal community child rights forums across West Singhbhum and Saranda forest blocks.
-            </p>
+
+            <div class="team-hover-popup" aria-hidden="true">
+              <span class="popup-tag">Program &amp; State Lead</span>
+              <h4>Ganthulawar Naresh</h4>
+              <div class="popup-role-sub">State Program Head (Jharkhand)</div>
+              <p class="popup-easy-desc">Leads Saranda Girls&rsquo; Residential Bridge Courses and tribal child rights mobilization across West Singhbhum blocks.</p>
+              <div class="popup-read-more">Full Profile &rarr;</div>
+            </div>
           </article>
 
           <!-- 8. Dr. Maheswata Das -->
-          <article class="profile-card" data-category="specialists" style="border-top: 4px solid var(--brand-secondary);">
-            <div class="profile-header">
-              <div class="profile-avatar" style="width: 74px; height: 74px; border-radius: 50%; background: #fae8ff; color: #a21caf; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.5rem;">MD</div>
-              <div class="profile-info">
-                <h3>Dr. Maheswata Das</h3>
-                <div class="profile-role" style="color: var(--brand-secondary);">Lead, Pedagogy &amp; Teacher Circles</div>
-              </div>
+          <article class="profile-showcase-card" tabindex="0" role="button" data-category="specialists"
+            data-member-name="Dr. Maheswata Das"
+            data-member-role="Lead, Pedagogy &amp; Teacher Circles"
+            data-member-badge="Program &amp; State Lead"
+            data-member-img="../images/team-maheswata.jpg"
+            data-member-bio="Specialist in foundational literacy, joyful activity-based learning, and bilingual bridge curriculum connecting tribal mother tongues to standard regional languages."
+            data-member-focus="Bilingual Pedagogy &amp; Foundational Literacy Toolkits">
+            <img src="../images/team-maheswata.jpg" alt="Dr. Maheswata Das — Lead, Pedagogy &amp; Teacher Circles" class="team-card-img" style="object-position: center 15%;" loading="lazy">
+            <div class="team-card-scrim" aria-hidden="true"></div>
+            <span class="team-badge-top badge-green">Pedagogy Lead</span>
+
+            <div class="team-front-content">
+              <h3>Dr. Maheswata Das</h3>
+              <p class="team-front-role">Lead, Pedagogy &amp; Teacher Circles</p>
+              <button type="button" class="team-know-more-btn">Know More &rarr;</button>
             </div>
-            <p class="profile-bio">
-              Specialist in foundational literacy, joyful activity-based learning, and bilingual bridge curriculum connecting tribal mother tongues to standard regional languages.
-            </p>
+
+            <div class="team-hover-popup" aria-hidden="true">
+              <span class="popup-tag">Program &amp; State Lead</span>
+              <h4>Dr. Maheswata Das</h4>
+              <div class="popup-role-sub">Lead, Pedagogy &amp; Teacher Circles</div>
+              <p class="popup-easy-desc">Designs bilingual Foundational Literacy curriculum &amp; joyful activity toolkits bridging tribal mother tongues in public classrooms.</p>
+              <div class="popup-read-more">Full Profile &rarr;</div>
+            </div>
           </article>
 
-          <!-- 9. Anurag Shrivastava -->
-          <article class="profile-card" data-category="specialists" style="border-top: 4px solid var(--brand-secondary);">
-            <div class="profile-header">
-              <div class="profile-avatar" style="width: 74px; height: 74px; border-radius: 50%; background: #ffedd5; color: #c2410c; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.5rem;">AS</div>
-              <div class="profile-info">
-                <h3>Anurag Shrivastava</h3>
-                <div class="profile-role" style="color: var(--brand-secondary);">Lead, Community &amp; Panchayati Raj</div>
-              </div>
+          <!-- 9. Priti Singh -->
+          <article class="profile-showcase-card" tabindex="0" role="button" data-category="field"
+            data-member-name="Priti Singh"
+            data-member-role="District Coordinator"
+            data-member-badge="Field Operations"
+            data-member-img="../images/team-priti.jpg"
+            data-member-bio="Coordinates school-level community mobilization, adolescent girls&rsquo; transition tracking, and School Management Committee empowerment across field clusters."
+            data-member-focus="Girls&rsquo; Retention &amp; Community Mobilization">
+            <img src="../images/team-priti.jpg" alt="Priti Singh — District Coordinator" class="team-card-img" style="object-position: center 15%;" loading="lazy">
+            <div class="team-card-scrim" aria-hidden="true"></div>
+            <span class="team-badge-top badge-navy">Field Operations</span>
+
+            <div class="team-front-content">
+              <h3>Priti Singh</h3>
+              <p class="team-front-role">District Coordinator</p>
+              <button type="button" class="team-know-more-btn">Know More &rarr;</button>
             </div>
-            <p class="profile-bio">
-              Mobilizes Village Education Committees and empowers elected Panchayat representatives to enforce child labour prohibitions and school monitoring.
-            </p>
+
+            <div class="team-hover-popup" aria-hidden="true">
+              <span class="popup-tag">Field Operations</span>
+              <h4>Priti Singh</h4>
+              <div class="popup-role-sub">District Coordinator</div>
+              <p class="popup-easy-desc">Champions adolescent girls&rsquo; secondary transition and vibrant community monitoring across rural clusters.</p>
+              <div class="popup-read-more">Full Profile &rarr;</div>
+            </div>
           </article>
 
-          <!-- 10. Sandipa Sinha -->
-          <article class="profile-card" data-category="specialists" style="border-top: 4px solid var(--brand-secondary);">
-            <div class="profile-header">
-              <div class="profile-avatar" style="width: 74px; height: 74px; border-radius: 50%; background: #fef2f2; color: #b91c1c; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.5rem;">SS</div>
-              <div class="profile-info">
-                <h3>Sandipa Sinha</h3>
-                <div class="profile-role" style="color: var(--brand-secondary);">Lead, Early Childhood Care &amp; ICDS</div>
-              </div>
+          <!-- 10. Sachin Mathur -->
+          <article class="profile-showcase-card" tabindex="0" role="button" data-category="field"
+            data-member-name="Sachin Mathur"
+            data-member-role="Program Manager, Field Operations"
+            data-member-badge="Field Operations"
+            data-member-img="../images/team-sachin.jpg"
+            data-member-bio="Leads cluster-level school monitoring, teacher capacity building workshops, and government convergence workflows on the ground."
+            data-member-focus="Cluster Mentoring &amp; Govt. Convergence">
+            <img src="../images/team-sachin.jpg" alt="Sachin Mathur — Program Manager, Field Operations" class="team-card-img" style="object-position: center 15%;" loading="lazy">
+            <div class="team-card-scrim" aria-hidden="true"></div>
+            <span class="team-badge-top badge-navy">Field Operations</span>
+
+            <div class="team-front-content">
+              <h3>Sachin Mathur</h3>
+              <p class="team-front-role">Program Manager, Field Operations</p>
+              <button type="button" class="team-know-more-btn">Know More &rarr;</button>
             </div>
-            <p class="profile-bio">
-              Guides Anganwadi convergence, early childhood cognitive stimulation, and maternal child health linkages across 7,125 Anganwadi centres.
-            </p>
+
+            <div class="team-hover-popup" aria-hidden="true">
+              <span class="popup-tag">Field Operations</span>
+              <h4>Sachin Mathur</h4>
+              <div class="popup-role-sub">Program Manager, Field Operations</div>
+              <p class="popup-easy-desc">Drives cluster-level classroom mentoring and government block-level education alignment.</p>
+              <div class="popup-read-more">Full Profile &rarr;</div>
+            </div>
           </article>
 
-          <!-- 11. Field Operations Coordinators -->
-          <article class="profile-card" data-category="field" style="border-top: 4px solid var(--brand-dark);">
-            <div class="profile-header">
-              <div class="profile-avatar" style="width: 74px; height: 74px; border-radius: 50%; background: #f1f5f9; color: #06163a; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.25rem;">FIELD</div>
-              <div class="profile-info">
-                <h3>Block &amp; Cluster Coordinators</h3>
-                <div class="profile-role" style="color: var(--brand-dark);">Field Operations Collective</div>
-              </div>
+          <!-- 11. Vishal -->
+          <article class="profile-showcase-card" tabindex="0" role="button" data-category="field"
+            data-member-name="Vishal"
+            data-member-role="Field Program Coordinator"
+            data-member-badge="Field Operations"
+            data-member-img="../images/team-vishal.jpg"
+            data-member-bio="Coordinates Child Labour Free Zone mobilization, household surveys, and Non-Residential Bridge Courses connecting drop-out children back into local public schools."
+            data-member-focus="NRBC Mainstreaming &amp; Household Mapping">
+            <img src="../images/team-vishal.jpg" alt="Vishal — Field Program Coordinator" class="team-card-img" style="object-position: center 15%;" loading="lazy">
+            <div class="team-card-scrim" aria-hidden="true"></div>
+            <span class="team-badge-top badge-navy">Field Operations</span>
+
+            <div class="team-front-content">
+              <h3>Vishal</h3>
+              <p class="team-front-role">Field Program Coordinator</p>
+              <button type="button" class="team-know-more-btn">Know More &rarr;</button>
             </div>
-            <p class="profile-bio">
-              <strong>Key Coordinators:</strong> Vishal, Haldhar, Upendra, Chandrakanth Ghate, Deepak Kumar, K. Narayana, Uttam, Priti Singh, Sachin Mathur, Vishnu Prasad Barthwal, Pradip Kumar. Operating directly on the ground across 14,700+ habitations.
-            </p>
+
+            <div class="team-hover-popup" aria-hidden="true">
+              <span class="popup-tag">Field Operations</span>
+              <h4>Vishal</h4>
+              <div class="popup-role-sub">Field Program Coordinator</div>
+              <p class="popup-easy-desc">Executes habitation surveys, Child Labour Free Zone mobilization, and bridge courses on the ground.</p>
+              <div class="popup-read-more">Full Profile &rarr;</div>
+            </div>
+          </article>
+
+          <!-- 12. Block & Cluster Coordinators Collective -->
+          <article class="profile-showcase-card" tabindex="0" role="button" data-category="field"
+            data-member-name="2,515+ Field Educators"
+            data-member-role="Block, Cluster &amp; Village Facilitators"
+            data-member-badge="Field Collective"
+            data-member-img="../images/our-strategy.jpg"
+            data-member-bio="Guided by key field coordinators including Haldhar, Upendra, Chandrakanth Ghate, Deepak Kumar, K. Narayana, Uttam, Vishnu Prasad Barthwal, and Pradip Kumar alongside Anurag Shrivastava (Panchayati Raj) &amp; Sandipa Sinha (Early Childhood &amp; ICDS), operating directly across 14,895 habitations and 8,041 Anganwadis."
+            data-member-focus="2,515 Field Staff &amp; 3,389 Village Volunteers">
+            <img src="../images/our-strategy.jpg" alt="ASPIRE Village Field Collective" class="team-card-img" loading="lazy">
+            <div class="team-card-scrim" aria-hidden="true"></div>
+            <span class="team-badge-top badge-navy">Field Collective</span>
+
+            <div class="team-front-content">
+              <h3>Block &amp; Village Collective</h3>
+              <p class="team-front-role">2,515+ Field Educators &amp; Leads</p>
+              <button type="button" class="team-know-more-btn">Know More &rarr;</button>
+            </div>
+
+            <div class="team-hover-popup" aria-hidden="true">
+              <span class="popup-tag">Field Collective</span>
+              <h4>2,515+ Field Educators</h4>
+              <div class="popup-role-sub">Block, Cluster &amp; SMC Leads</div>
+              <p class="popup-easy-desc">Including Anurag Shrivastava, Sandipa Sinha, Haldhar, Upendra, Chandrakanth, Deepak, K. Narayana, Uttam &amp; 3,389 volunteers across 14,895 habitations.</p>
+              <div class="popup-read-more">View Collective &rarr;</div>
+            </div>
           </article>
         </div>
 
@@ -319,6 +489,33 @@
     </div>
   </footer>
 
-  <script src="../js/main.js?v=5.0" defer></script>
+  <!-- Team Member Profile Modal -->
+  <div class="pillar-modal-backdrop" id="team-detail-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="team-modal-name">
+    <div class="pillar-modal-dialog team-modal-dialog">
+      <button class="pillar-modal-close" id="team-modal-close" aria-label="Close profile popup">&times;</button>
+      <div class="team-modal-header">
+        <img id="team-modal-img" src="../images/dayaram.jpg" alt="Team member portrait" class="team-modal-portrait">
+        <div class="team-modal-heading">
+          <span class="pillar-badge-top" id="team-modal-badge" style="position: static; display: inline-block; margin-bottom: 8px;">Core Leadership</span>
+          <h3 id="team-modal-name">Dayaram</h3>
+          <div id="team-modal-role" class="team-modal-role">Executive Director / Founder</div>
+        </div>
+      </div>
+      <div class="pillar-modal-body">
+        <div class="pillar-modal-block">
+          <div class="block-label">Background &amp; Leadership</div>
+          <p id="team-modal-bio"></p>
+        </div>
+        <div class="pillar-modal-impact" id="team-modal-focus"></div>
+        <div class="pillar-modal-footer">
+          <button type="button" class="btn btn-primary" id="team-modal-dismiss">Close Profile</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <button class="back-to-top" aria-label="Back to top">&uarr;</button>
+
+  <script src="../js/main.js?v=5.9" defer></script>
 </body>
 </html>
